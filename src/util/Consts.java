@@ -38,5 +38,23 @@ public class Consts {
 			return null;
 		}
 	}
+	
+	/*----------------------------------------- FLIGHTS QUERIES -----------------------------------------*/
+	public static final String SQL_SEL_FLIGHT = "SELECT * FROM FlightTbl";
+	public static final String SQL_DEL_FLIGHT = "{ call qryDelFlight(?) }";
+	public static final String SQL_INS_FLIGHT = "{ call qryInsFlight(?,?,?,?,?,?,?,?,?) }";
+	public static final String SQL_UPD_FLIGHT = "{ call qryUpdFlight(?,?,?,?) }";
+
+	/*----------------------------------------- AIRPORTS QUERIES -----------------------------------------*/
+	public static final String SQL_SEL_AIRPORT = "SELECT * FROM AirPortTbl";
+	public static final String SQL_INS_AIRPORT = "{ call qryInsAirPort(?,?,?,?) }";
+	
+	/*----------------------------------------- AIRPLANES QUERIES -----------------------------------------*/
+	public static final String SQL_SEL_AIRPLANE = "SELECT * FROM AirPlaneTbl";
+	public static final String SQL_INS_AIRPLANE = "{ call qryInsAirPlane(?,?) }";
+	
+	/*------------------------------------------FLIGHT SEATS QUERIES ---------------------------------------*/
+	public static final String SQL_SEL_FLIGHTSEATS = "SELECT * FROM FlightSeatTbl";
+	public static final String SQL_INS_FLIGHTSEATS = "{ call qryInsFlightSeat(?,?,?,?,?) }";
 }
 
