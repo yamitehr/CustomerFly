@@ -1,0 +1,244 @@
+{
+	"Flights":[
+		{
+			"FlightID" : "101",
+			"DepartureAirportCode":"TLV-345",
+			"DepartureDateTime":"2022-12-12 09:00:00.000000",
+			"DestinationAirportCode":"LND-125",
+			"DestinationDateTime" : "2022-12-12 13:00:00.000000",
+			"Status":"On Time",
+			"AirplaneID":"A-987",
+			"DepartureCountry" : "Israel",
+			"DepartureCity" : "Tel Aviv",
+			"DestinationCountry" : "England",
+			"DestinationCity" : "London",
+			"SeatsInFlight":[
+				{
+					"Row":"1"
+					"Seat":"A"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"B"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"C"
+					"Class":"Economy"
+				},
+				{
+					"Row":"2"
+					"Seat":"A"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"B"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"C"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"3"
+					"Seat":"A"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"B"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"C"
+					"Class":"First Class"
+				}
+			]
+		},
+		{
+			"FlightID" : "139",
+			"DepartureAirportCode":"LND-125",
+			"DepartureDateTime":"2022-01-01 16:00:00.000000",
+			"DestinationAirportCode":"TLV-345",
+			"DestinationDateTime" : "2022-01-01 21:00:00.000000",
+			"Status":"Delayed",
+			"AirplaneID":"B-345",
+			"DepartureCountry" : "England",
+			"DepartureCity" : "London",
+			"DestinationCountry" : "Israel",
+			"DestinationCity" : "Tel Aviv",
+			"SeatsInFlight":[
+				{
+					"Row":"1"
+					"Seat":"A"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"B"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"C"
+					"Class":"Economy"
+				},
+				{
+					"Row":"2"
+					"Seat":"A"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"B"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"C"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"3"
+					"Seat":"A"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"B"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"C"
+					"Class":"First Class"
+				}
+			]
+		},
+		{
+			"FlightID" : "192",
+			"DepartureAirportCode":"BRC-098",
+			"DepartureDateTime":"2022-01-21 17:00:00.000000",
+			"DestinationAirportCode":"PRG-874",
+			"DestinationDateTime" : "2022-01-21 19:00:00.000000",
+			"Status":"Cancelled",
+			"AirplaneID":"C-023",
+			"DepartureCountry" : "Spain",
+			"DepartureCity" : "Barcelona",
+			"DestinationCountry" : "Chech",
+			"DestinationCity" : "Prague",
+			"SeatsInFlight":[
+				{
+					"Row":"1"
+					"Seat":"A"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"B"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"C"
+					"Class":"Economy"
+				},
+				{
+					"Row":"2"
+					"Seat":"A"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"B"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"C"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"3"
+					"Seat":"A"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"B"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"C"
+					"Class":"First Class"
+				}
+			]
+		},
+		{
+			"FlightID" : "202",
+			"DepartureAirportCode":"BER-342",
+			"DepartureDateTime":"2022-02-13 03:00:00.000000",
+			"DestinationAirportCode":"BRC-098",
+			"DestinationDateTime" : "2022-02-13 06:00:00.000000",
+			"Status":"On Time",
+			"AirplaneID":"D-451",
+			"DepartureCountry" : "Germany",
+			"DepartureCity" : "Berlin",
+			"DestinationCountry" : "Spain",
+			"DestinationCity" : "Barcelona",
+			"SeatsInFlight":[
+				{
+					"Row":"1"
+					"Seat":"A"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"B"
+					"Class":"Economy"
+				},
+				{
+					"Row":"1"
+					"Seat":"C"
+					"Class":"Economy"
+				},
+				{
+					"Row":"2"
+					"Seat":"A"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"B"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"2"
+					"Seat":"C"
+					"Class":"Buisness"
+				},
+				{
+					"Row":"3"
+					"Seat":"A"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"B"
+					"Class":"First Class"
+				},
+				{
+					"Row":"3"
+					"Seat":"C"
+					"Class":"First Class"
+				}
+			]
+		}
+	]
+}
