@@ -2,14 +2,14 @@ package control;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.LocalDate;
 import java.util.ArrayList;
+
 import entity.Airplane;
 import entity.Airport;
 import entity.Flight;
@@ -133,6 +133,7 @@ public class FlightsControl {
 						stmt.setTimestamp(i++, flight.getDestinationDateTime());
 						stmt.setString(i++, flight.getStatus().toString());
 						stmt.setString(i++, flight.getAirplane().getTailNumber());
+						stmt.setDate(i++, Date.valueOf(LocalDate.now()));
 						stmt.executeUpdate();
 						return true;
 						
@@ -216,7 +217,14 @@ public class FlightsControl {
 				try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
 						CallableStatement stmt =  conn.prepareCall(util.Consts.SQL_UPD_FLIGHT)){
 					int i = 1;
-					
+					stmt.setString(i++,flight.getDepartureAirport().getAirportCode());
+					stmt.setTimestamp(i++,flight.getDepartureDateTime());
+					stmt.setString(i++, flight.getDestinationAirport().getAirportCode());
+					stmt.setTimestamp(i++, flight.getDestinationDateTime());
+					stmt.setString(i++, flight.getStatus().toString());
+					stmt.setString(i++, flight.getAirplane().getTailNumber());
+					stmt.setDate(i++, Date.valueOf(LocalDate.now()));
+					stmt.setString(i++, flight.getFlightID());
 					stmt.executeUpdate();
 				}
 				return true;
