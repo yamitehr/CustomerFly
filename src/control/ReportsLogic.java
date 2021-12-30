@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import entity.AirPort;
 import entity.OrderDetail;
 import util.Consts;
 
@@ -24,7 +23,7 @@ public class ReportsLogic {
 		return _instance;
 	}
 	
-	public ArrayList<OrderDetail> getOrderDetails() {
+	public static ArrayList<OrderDetail> getOrderDetails() {
 		ArrayList<OrderDetail> results = new ArrayList<OrderDetail>();
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -33,7 +32,18 @@ public class ReportsLogic {
 					ResultSet rs = stmt.executeQuery()) {
 				while (rs.next()) {
 					int i = 1;
-					
+					String pID = rs.getString(i++);
+					String Fname = rs.getString(i++);
+					String Lname = rs.getString(i++);
+					Integer morning = rs.getInt(i++);
+					morning = (morning == null)? 0:morning;
+					Integer noon = rs.getInt(i++);
+					noon = (noon == null)? 0:noon;
+					Integer evening = rs.getInt(i++);
+					evening = (evening == null)? 0:evening;
+					Integer night = rs.getInt(i++);
+					night = (night == null)? 0:night;
+					results.add(new OrderDetail(pID,Fname,Lname,morning,noon,evening,night));
 					
 				}
 			} catch (SQLException e) {
@@ -45,4 +55,11 @@ public class ReportsLogic {
 		return results;
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<OrderDetail> od = getOrderDetails();
+		for(OrderDetail o :od) {
+			System.out.println(o);
+		}
+	}
 }

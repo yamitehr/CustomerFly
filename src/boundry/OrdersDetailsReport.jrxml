@@ -4,9 +4,10 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\control\DataAdapter.xml"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID AS Morning, AllNoonFlightsQry.CountOfFlightID AS Noon, AllEvningFlightsQry.CountOfFlightID AS Evening, AllNightFlightsQry.CountOfFlightID AS Night
-FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN AllNightFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNightFlightsQry.CustPassportID) LEFT JOIN AllEvningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllEvningFlightsQry.CustPassportID) LEFT JOIN AllNoonFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNoonFlightsQry.CustPassportID) LEFT JOIN AllMorningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllMorningFlightsQry.CustPassportID
-GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID, AllNoonFlightsQry.CountOfFlightID, AllEvningFlightsQry.CountOfFlightID, AllNightFlightsQry.CountOfFlightID;]]>
+		<![CDATA[SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID AS Morning, ALLNOONFLIGHTSQRY.CountOfFlightID AS Noon, ALLEVNINGFLIGHTSQRY.CountOfFlightID AS Evening, ALLNIGHTFLIGHTSQRY.CountOfFlightID
+FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN ALLNIGHTFLIGHTSQRY AS ALLNIGHTFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNIGHTFLIGHTSQRY.CustPassportID) LEFT JOIN ALLEVNINGFLIGHTSQRY AS ALLEVNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLEVNINGFLIGHTSQRY.CustPassportID) LEFT JOIN ALLNOONFLIGHTSQRY AS ALLNOONFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNOONFLIGHTSQRY.CustPassportID) LEFT JOIN ALLMORNINGFLIGHTSQRY AS ALLMORNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLMORNINGFLIGHTSQRY.CustPassportID
+GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID, ALLNOONFLIGHTSQRY.CountOfFlightID, ALLEVNINGFLIGHTSQRY.CountOfFlightID, ALLNIGHTFLIGHTSQRY.CountOfFlightID;
+]]>
 	</queryString>
 	<field name="PassportID" class="java.lang.String"/>
 	<field name="FirstName" class="java.lang.String"/>

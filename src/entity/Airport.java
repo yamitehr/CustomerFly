@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Objects;
+
 public class Airport {
 	private String airportCode;
 	private String country;
@@ -32,6 +34,17 @@ public class Airport {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Airport other = (Airport) obj;
+		return Objects.equals(airportCode, other.airportCode);
 	}
 	
 	

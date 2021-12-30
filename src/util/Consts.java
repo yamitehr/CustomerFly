@@ -14,10 +14,12 @@ public class Consts {
 	public static final String JDBC_STR = "net.ucanaccess.jdbc.UcanaccessDriver";
 	/*----------------------------------------- CONSTS VALUES -----------------------------------------*/
 	
-	public static final String SQL_ORDER_DETAILS_REPORT  = "SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID AS Morning, AllNoonFlightsQry.CountOfFlightID AS Noon, AllEvningFlightsQry.CountOfFlightID AS Evening, AllNightFlightsQry.CountOfFlightID AS Night\r\n"
-			+ "FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN AllNightFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNightFlightsQry.CustPassportID) LEFT JOIN AllEvningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllEvningFlightsQry.CustPassportID) LEFT JOIN AllNoonFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNoonFlightsQry.CustPassportID) LEFT JOIN AllMorningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllMorningFlightsQry.CustPassportID\r\n"
-			+ "GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID, AllNoonFlightsQry.CountOfFlightID, AllEvningFlightsQry.CountOfFlightID, AllNightFlightsQry.CountOfFlightID;\r\n"
-			+ ""; 
+	public static final String SQL_ORDER_DETAILS_REPORT  = "SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID AS Morning, ALLNOONFLIGHTSQRY.CountOfFlightID AS Noon, ALLEVNINGFLIGHTSQRY.CountOfFlightID AS Evening, ALLNIGHTFLIGHTSQRY.CountOfFlightID\r\n"
+			+ "FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN ALLNIGHTFLIGHTSQRY AS ALLNIGHTFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNIGHTFLIGHTSQRY.CustPassportID) LEFT JOIN ALLEVNINGFLIGHTSQRY AS ALLEVNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLEVNINGFLIGHTSQRY.CustPassportID) LEFT JOIN ALLNOONFLIGHTSQRY AS ALLNOONFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNOONFLIGHTSQRY.CustPassportID) LEFT JOIN ALLMORNINGFLIGHTSQRY AS ALLMORNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLMORNINGFLIGHTSQRY.CustPassportID\r\n"
+			+ "GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID, ALLNOONFLIGHTSQRY.CountOfFlightID, ALLEVNINGFLIGHTSQRY.CountOfFlightID, ALLNIGHTFLIGHTSQRY.CountOfFlightID;\r\n"
+			+ "";
+			
+			
 			
 	
 	/*------------------------------------------ASSIGN TO SHIFTS QUERIES ---------------------------------------*/
@@ -43,5 +45,25 @@ public class Consts {
 			return null;
 		}
 	}
+	
+	/*----------------------------------------- FLIGHTS QUERIES -----------------------------------------*/
+	public static final String SQL_SEL_FLIGHT = "SELECT * FROM FlightTbl";
+	public static final String SQL_DEL_FLIGHT = "{ call qryDelFlight(?) }";
+	public static final String SQL_INS_FLIGHT = "{ call qryInsFlight(?,?,?,?,?,?,?,?) }";
+	public static final String SQL_UPD_FLIGHT = "{ call qryUpdFlight(?,?,?,?,?,?,?,?) }";
+
+	/*----------------------------------------- AIRPORTS QUERIES -----------------------------------------*/
+	public static final String SQL_SEL_AIRPORT = "SELECT * FROM AirPortTbl";
+	public static final String SQL_INS_AIRPORT = "{ call qryInsAirPort(?,?,?,?) }";
+	public static final String SQL_AIRPORT_EXIST ="";
+	
+	/*----------------------------------------- AIRPLANES QUERIES -----------------------------------------*/
+	public static final String SQL_SEL_AIRPLANE = "SELECT * FROM AirPlaneTbl";
+	public static final String SQL_INS_AIRPLANE = "{ call qryInsAirPlane(?,?) }";
+	public static final String SQL_AIRPLANE_EXIST ="";
+	
+	/*------------------------------------------FLIGHT SEATS QUERIES ---------------------------------------*/
+	public static final String SQL_SEL_FLIGHTSEATS = "SELECT * FROM FlightSeatTbl";
+	public static final String SQL_INS_FLIGHTSEATS = "{ call qryInsFlightSeat(?,?,?,?,?) }";
 }
 
