@@ -6,13 +6,13 @@
 			"DepartureDateTime":"2022-12-12 09:00:00.000000",
 			"DestinationAirportCode":"LND-125",
 			"DestinationDateTime" : "2022-12-12 13:00:00.000000",
-			"Status":"On Time",
+			"Status":"OnTime",
 			"AirplaneID":"A-987",
 			"DepartureCountry" : "Israel",
 			"DepartureCity" : "Tel Aviv",
 			"DestinationCountry" : "England",
 			"DestinationCity" : "London",
-			"SeatsInFlight":[
+			"Seats":[
 				{
 					"Row":"1"
 					"Seat":"A"
@@ -72,7 +72,7 @@
 			"DepartureCity" : "London",
 			"DestinationCountry" : "Israel",
 			"DestinationCity" : "Tel Aviv",
-			"SeatsInFlight":[
+			"Seats":[
 				{
 					"Row":"1"
 					"Seat":"A"
@@ -132,7 +132,7 @@
 			"DepartureCity" : "Barcelona",
 			"DestinationCountry" : "Chech",
 			"DestinationCity" : "Prague",
-			"SeatsInFlight":[
+			"Seats":[
 				{
 					"Row":"1"
 					"Seat":"A"
@@ -186,13 +186,13 @@
 			"DepartureDateTime":"2022-02-13 03:00:00.000000",
 			"DestinationAirportCode":"BRC-098",
 			"DestinationDateTime" : "2022-02-13 06:00:00.000000",
-			"Status":"On Time",
+			"Status":"OnTime",
 			"AirplaneID":"D-451",
 			"DepartureCountry" : "Germany",
 			"DepartureCity" : "Berlin",
 			"DestinationCountry" : "Spain",
 			"DestinationCity" : "Barcelona",
-			"SeatsInFlight":[
+			"Seats":[
 				{
 					"Row":"1"
 					"Seat":"A"
