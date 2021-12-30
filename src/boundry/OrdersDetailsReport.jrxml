@@ -3,9 +3,36 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdersDetailsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="567844eb-f7e7-42f8-a99e-135cc1df477b">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\control\DataAdapter.xml"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
 	<queryString language="SQL">
-		<![CDATA[SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID AS Morning, ALLNOONFLIGHTSQRY.CountOfFlightID AS Noon, ALLEVNINGFLIGHTSQRY.CountOfFlightID AS Evening, ALLNIGHTFLIGHTSQRY.CountOfFlightID
-FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN ALLNIGHTFLIGHTSQRY AS ALLNIGHTFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNIGHTFLIGHTSQRY.CustPassportID) LEFT JOIN ALLEVNINGFLIGHTSQRY AS ALLEVNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLEVNINGFLIGHTSQRY.CustPassportID) LEFT JOIN ALLNOONFLIGHTSQRY AS ALLNOONFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNOONFLIGHTSQRY.CustPassportID) LEFT JOIN ALLMORNINGFLIGHTSQRY AS ALLMORNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLMORNINGFLIGHTSQRY.CustPassportID
+		<![CDATA[SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID AS Morning, ALLNOONFLIGHTSQRY.CountOfFlightID AS Noon, ALLEVNINGFLIGHTSQRY.CountOfFlightID AS Evening, ALLNIGHTFLIGHTSQRY.CountOfFlightID AS Night
+FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN ALLNIGHTFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNIGHTFLIGHTSQRY.CustPassportID) LEFT JOIN ALLEVNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLEVNINGFLIGHTSQRY.CustPassportID) LEFT JOIN ALLNOONFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNOONFLIGHTSQRY.CustPassportID) LEFT JOIN ALLMORNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLMORNINGFLIGHTSQRY.CustPassportID
 GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID, ALLNOONFLIGHTSQRY.CountOfFlightID, ALLEVNINGFLIGHTSQRY.CountOfFlightID, ALLNIGHTFLIGHTSQRY.CountOfFlightID;
 ]]>
 	</queryString>
@@ -20,108 +47,300 @@ GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlight
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="105" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="-20" y="5" width="121" height="30" uuid="13d95474-02c3-4257-8556-620ff767dd51"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="80" y="5" width="110" height="30" uuid="1eeccf09-dd41-4a14-9f85-3ffc07e9d086"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="270" y="0" width="240" height="40" uuid="780ef0b0-8d8a-4e5a-ba51-c79699bf7e00"/>
+				<textElement>
+					<font size="25" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ORDER'S DETAILS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="228" y="30" width="308" height="1" uuid="36ec3e87-8b32-4edd-91c4-dfc550609d56"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField evaluationTime="Report">
+				<reportElement x="70" y="70" width="51" height="29" uuid="a1e9b0d5-0d40-43d7-ade1-056886736935"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-20" y="70" width="100" height="30" uuid="23a16bfb-9605-42f5-a7c5-da3f410e0136"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total results:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="96" width="130" height="1" uuid="b942f69f-3f4e-4d9f-9c40-21bbf705da7e"/>
+			</line>
+			<line>
+				<reportElement x="110" y="66" width="1" height="30" uuid="ceaf45c5-8083-4a3f-ae61-22cf2e663c61"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="-4" y="20" width="118" height="30" uuid="4e8860cf-5114-48a2-95be-3dfdc704a977">
+				<reportElement x="0" y="21" width="118" height="30" uuid="4e8860cf-5114-48a2-95be-3dfdc704a977">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a208e1e3-22d8-40ba-90d5-6ee93aa0c394"/>
 				</reportElement>
-				<text><![CDATA[PassportID]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Passport ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="114" y="20" width="114" height="30" uuid="546f8025-485e-407a-b405-4dab65b8894f">
+				<reportElement x="118" y="21" width="114" height="30" uuid="546f8025-485e-407a-b405-4dab65b8894f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27f872ff-71ac-41b6-9e1b-bc2392058d14"/>
 				</reportElement>
-				<text><![CDATA[FirstName]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[First Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="228" y="20" width="114" height="30" uuid="547afd19-67ae-44bd-9dff-67f4fa7c5dd2">
+				<reportElement x="232" y="21" width="114" height="30" uuid="547afd19-67ae-44bd-9dff-67f4fa7c5dd2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f4edad6-69ab-4fac-afa8-6f7891de6648"/>
 				</reportElement>
-				<text><![CDATA[LastName]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Last Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="342" y="20" width="114" height="30" uuid="9d5fd551-72e7-4684-b856-2d5d262fbf9c">
+				<reportElement x="338" y="20" width="121" height="30" uuid="9d5fd551-72e7-4684-b856-2d5d262fbf9c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c0bba5d-65ad-43cf-8b19-42f9611cc44a"/>
 				</reportElement>
-				<text><![CDATA[Morning]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Morning(5:00-11:00)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="456" y="20" width="114" height="30" uuid="8713d3ec-b62e-4acb-900f-481a22af1419">
+				<reportElement x="465" y="21" width="114" height="30" uuid="8713d3ec-b62e-4acb-900f-481a22af1419">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="114a691d-5695-430c-9d87-f2fdc8cf5165"/>
 				</reportElement>
-				<text><![CDATA[Noon]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Noon(11:00-17:00)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="570" y="20" width="114" height="30" uuid="c0aedc5f-f02f-4a5f-a15d-e052419c8675">
+				<reportElement x="578" y="20" width="131" height="30" uuid="c0aedc5f-f02f-4a5f-a15d-e052419c8675">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aee9dc99-ee80-4861-bd40-41c076ba9bae"/>
 				</reportElement>
-				<text><![CDATA[Evening]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Evening(17:00-23:00)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="684" y="20" width="114" height="30" uuid="d881c2f7-e38e-4f0b-8c75-af01e7b5bd53">
+				<reportElement x="710" y="20" width="120" height="30" uuid="d881c2f7-e38e-4f0b-8c75-af01e7b5bd53">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69474f03-a39a-4d68-9605-0d9c7b8bd194"/>
 				</reportElement>
-				<text><![CDATA[Night]]></text>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Night(23:00-5:00)]]></text>
 			</staticText>
+			<line>
+				<reportElement x="-20" y="50" width="842" height="1" uuid="d735bed9-e53b-4be7-861a-0edf20524532"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="122" y="20" width="1" height="30" uuid="303f8213-8bd0-452b-8324-ed244fd36d19"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="236" y="20" width="1" height="30" uuid="0ea5e7a3-f5d0-4a4e-89ef-ca021044b3cd"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="338" y="20" width="1" height="30" uuid="81cc979b-887e-4daa-9299-dc843a1e2766"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="464" y="21" width="1" height="30" uuid="68d0b420-ad2d-4f0f-99b2-293d8ca83303"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="578" y="21" width="1" height="30" uuid="8ffad7df-7d52-4d64-a720-87cef21fada8"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="718" y="21" width="1" height="30" uuid="3663947c-96a0-489c-b10e-f939aaf18acc"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<textField>
-				<reportElement x="2" y="60" width="118" height="30" uuid="729eefac-54c3-47bb-a4a0-21c5ac102b57">
+				<reportElement x="0" y="-10" width="118" height="30" uuid="729eefac-54c3-47bb-a4a0-21c5ac102b57">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a208e1e3-22d8-40ba-90d5-6ee93aa0c394"/>
 				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{PassportID}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="120" y="60" width="114" height="30" uuid="ff1b0f69-bc73-4b2f-b41b-49d6f0ce7936">
+				<reportElement x="118" y="-10" width="114" height="30" uuid="ff1b0f69-bc73-4b2f-b41b-49d6f0ce7936">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27f872ff-71ac-41b6-9e1b-bc2392058d14"/>
 				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="234" y="60" width="114" height="30" uuid="21ffe069-840a-4d1a-aff6-cba368b3a29e">
+				<reportElement x="232" y="-10" width="114" height="30" uuid="21ffe069-840a-4d1a-aff6-cba368b3a29e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f4edad6-69ab-4fac-afa8-6f7891de6648"/>
 				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{LastName}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="348" y="60" width="114" height="30" uuid="a77ed122-1470-48d3-9464-e6b28d164838">
+				<reportElement x="346" y="-10" width="114" height="30" uuid="a77ed122-1470-48d3-9464-e6b28d164838">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c0bba5d-65ad-43cf-8b19-42f9611cc44a"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{Morning}]]></textFieldExpression>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Morning}!=null?$F{Morning}:0)]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="462" y="60" width="114" height="30" uuid="c244e295-1639-4bf2-8541-5233872de306">
+				<reportElement x="460" y="-10" width="114" height="30" uuid="c244e295-1639-4bf2-8541-5233872de306">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="114a691d-5695-430c-9d87-f2fdc8cf5165"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{Noon}]]></textFieldExpression>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Noon}!=null?$F{Noon}:0)]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="576" y="60" width="114" height="30" uuid="ad05ebde-cb2c-468c-8b92-eecaaff51449">
+				<reportElement x="574" y="-10" width="114" height="30" uuid="ad05ebde-cb2c-468c-8b92-eecaaff51449">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aee9dc99-ee80-4861-bd40-41c076ba9bae"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{Evening}]]></textFieldExpression>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Evening}!=null?$F{Evening}:0)]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="690" y="60" width="114" height="30" uuid="b989d399-3df3-4fe2-8802-237ff2f12ca8">
+				<reportElement x="688" y="-10" width="114" height="30" uuid="b989d399-3df3-4fe2-8802-237ff2f12ca8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69474f03-a39a-4d68-9605-0d9c7b8bd194"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{Night}]]></textFieldExpression>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Night}!=null?$F{Night}:0)]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="122" y="-11" width="1" height="30" uuid="a1ac8f35-04af-4e2c-8e4a-36aae8097c01"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="236" y="-11" width="1" height="30" uuid="830145b9-9dec-4ff8-97be-51c81625b057"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="338" y="-11" width="1" height="30" uuid="8213d628-df69-419c-b3f5-4a6a2fc2eb42"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="464" y="-10" width="1" height="30" uuid="cf85844f-5dd0-4f04-984c-b1025a9190bf"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="578" y="-10" width="1" height="30" uuid="3b6408a8-695f-42b5-8489-ec5112b6a9d0"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="718" y="-10" width="1" height="30" uuid="f210626f-55e2-444f-9058-309cb50148c7"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="-20" y="19" width="845" height="1" uuid="e735860b-31b5-4066-ba0d-7064bc0681eb"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="51" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="250" y="10" width="130" height="30" uuid="7a04d8fd-30d8-4416-a142-8e707fe4c4a3"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="380" y="10" width="180" height="30" uuid="64f7ce28-063a-4a82-964d-0f7fb8aced84"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
