@@ -14,6 +14,11 @@ public class Consts {
 	public static final String JDBC_STR = "net.ucanaccess.jdbc.UcanaccessDriver";
 	/*----------------------------------------- CONSTS VALUES -----------------------------------------*/
 	
+	public static final String SQL_ORDER_DETAILS_REPORT  = "SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID AS Morning, AllNoonFlightsQry.CountOfFlightID AS Noon, AllEvningFlightsQry.CountOfFlightID AS Evening, AllNightFlightsQry.CountOfFlightID AS Night\r\n"
+			+ "FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN AllNightFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNightFlightsQry.CustPassportID) LEFT JOIN AllEvningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllEvningFlightsQry.CustPassportID) LEFT JOIN AllNoonFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNoonFlightsQry.CustPassportID) LEFT JOIN AllMorningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllMorningFlightsQry.CustPassportID\r\n"
+			+ "GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID, AllNoonFlightsQry.CountOfFlightID, AllEvningFlightsQry.CountOfFlightID, AllNightFlightsQry.CountOfFlightID;\r\n"
+			+ ""; 
+			
 	
 	/*------------------------------------------ASSIGN TO SHIFTS QUERIES ---------------------------------------*/
 	/**

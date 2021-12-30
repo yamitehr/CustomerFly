@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdersDetailsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ea8f711-205d-46de-b866-ed130114f99d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdersDetailsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="567844eb-f7e7-42f8-a99e-135cc1df477b">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\control\DataAdapter.xml"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID AS Morning, AllNoonFlightsQry.CountOfFlightID AS Noon, AllEvningFlightsQry.CountOfFlightID AS Evening, AllNightFlightsQry.CountOfFlightID AS Night
 FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN AllNightFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNightFlightsQry.CustPassportID) LEFT JOIN AllEvningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllEvningFlightsQry.CustPassportID) LEFT JOIN AllNoonFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllNoonFlightsQry.CustPassportID) LEFT JOIN AllMorningFlightsQry ON AllCustomersOfUpdatedFlightsQry.PassportID = AllMorningFlightsQry.CustPassportID
-GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID, AllNoonFlightsQry.CountOfFlightID, AllEvningFlightsQry.CountOfFlightID, AllNightFlightsQry.CountOfFlightID;
-]]>
+GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, AllMorningFlightsQry.CountOfFlightID, AllNoonFlightsQry.CountOfFlightID, AllEvningFlightsQry.CountOfFlightID, AllNightFlightsQry.CountOfFlightID;]]>
 	</queryString>
 	<field name="PassportID" class="java.lang.String"/>
 	<field name="FirstName" class="java.lang.String"/>
@@ -26,92 +25,92 @@ GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlight
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="70" splitType="Stretch">
+		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="120" y="0" width="100" height="30" uuid="5c2fe4e9-633c-4cc9-9b4e-b5b13a008dba">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86bb713c-c382-4bdc-8111-70c17cd46b5b"/>
+				<reportElement x="-4" y="20" width="118" height="30" uuid="4e8860cf-5114-48a2-95be-3dfdc704a977">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a208e1e3-22d8-40ba-90d5-6ee93aa0c394"/>
+				</reportElement>
+				<text><![CDATA[PassportID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="20" width="114" height="30" uuid="546f8025-485e-407a-b405-4dab65b8894f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27f872ff-71ac-41b6-9e1b-bc2392058d14"/>
 				</reportElement>
 				<text><![CDATA[FirstName]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="240" y="0" width="90" height="30" uuid="f3fe7e23-1731-4f5a-8c90-a56a5ad89eda">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="452ce16b-f6e6-4c80-a6f7-dcc050b393d7"/>
+				<reportElement x="228" y="20" width="114" height="30" uuid="547afd19-67ae-44bd-9dff-67f4fa7c5dd2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f4edad6-69ab-4fac-afa8-6f7891de6648"/>
 				</reportElement>
 				<text><![CDATA[LastName]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="340" y="0" width="63" height="30" uuid="b45ee06d-8dfe-48d2-920e-87fa8720ac5c">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ef7ae262-2e40-489c-b52e-fa13d1dcd9e7"/>
+				<reportElement x="342" y="20" width="114" height="30" uuid="9d5fd551-72e7-4684-b856-2d5d262fbf9c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c0bba5d-65ad-43cf-8b19-42f9611cc44a"/>
 				</reportElement>
 				<text><![CDATA[Morning]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="460" y="0" width="76" height="30" uuid="9743d1d0-7df7-4330-a262-641fd4a4104d">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6842c59e-b4ce-46fa-b219-a0d842d6b92d"/>
+				<reportElement x="456" y="20" width="114" height="30" uuid="8713d3ec-b62e-4acb-900f-481a22af1419">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="114a691d-5695-430c-9d87-f2fdc8cf5165"/>
 				</reportElement>
 				<text><![CDATA[Noon]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="590" y="0" width="79" height="30" uuid="296569d4-fa11-46c5-82f7-9ee38689fe5e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7ff10f6-210b-4642-8ed1-625b544bc95e"/>
+				<reportElement x="570" y="20" width="114" height="30" uuid="c0aedc5f-f02f-4a5f-a15d-e052419c8675">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aee9dc99-ee80-4861-bd40-41c076ba9bae"/>
 				</reportElement>
 				<text><![CDATA[Evening]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="710" y="0" width="92" height="30" uuid="6f268d04-6239-43ab-85f6-3f32719650a7">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c6fba91-373e-41f7-8c34-7a5a474c0151"/>
+				<reportElement x="684" y="20" width="114" height="30" uuid="d881c2f7-e38e-4f0b-8c75-af01e7b5bd53">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69474f03-a39a-4d68-9605-0d9c7b8bd194"/>
 				</reportElement>
 				<text><![CDATA[Night]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="20" y="0" width="100" height="30" uuid="3fba2cb5-a015-4eec-900c-11cb8e189426">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b004e6dd-b499-4d99-9294-f012136d0ce8"/>
-				</reportElement>
-				<text><![CDATA[PassportID]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="60" width="110" height="30" uuid="b449329c-75dc-44ff-9745-6cf77530f809">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b004e6dd-b499-4d99-9294-f012136d0ce8"/>
+				<reportElement x="2" y="60" width="118" height="30" uuid="729eefac-54c3-47bb-a4a0-21c5ac102b57">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a208e1e3-22d8-40ba-90d5-6ee93aa0c394"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{PassportID}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="120" y="60" width="90" height="30" uuid="6dcf6950-639a-40d6-8515-acc0dc3924ef">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86bb713c-c382-4bdc-8111-70c17cd46b5b"/>
+				<reportElement x="120" y="60" width="114" height="30" uuid="ff1b0f69-bc73-4b2f-b41b-49d6f0ce7936">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27f872ff-71ac-41b6-9e1b-bc2392058d14"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="60" width="100" height="30" uuid="0536d2b6-b96d-40a6-b588-6229243ad588">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="452ce16b-f6e6-4c80-a6f7-dcc050b393d7"/>
+				<reportElement x="234" y="60" width="114" height="30" uuid="21ffe069-840a-4d1a-aff6-cba368b3a29e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f4edad6-69ab-4fac-afa8-6f7891de6648"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{LastName}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="63" width="63" height="30" uuid="5bc612b4-ea95-405c-b6ce-250bb5225744">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ef7ae262-2e40-489c-b52e-fa13d1dcd9e7"/>
+				<reportElement x="348" y="60" width="114" height="30" uuid="a77ed122-1470-48d3-9464-e6b28d164838">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c0bba5d-65ad-43cf-8b19-42f9611cc44a"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{Morning}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="450" y="63" width="86" height="30" uuid="aaf49450-8b90-4a18-a228-d6beac9a2281">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6842c59e-b4ce-46fa-b219-a0d842d6b92d"/>
+				<reportElement x="462" y="60" width="114" height="30" uuid="c244e295-1639-4bf2-8541-5233872de306">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="114a691d-5695-430c-9d87-f2fdc8cf5165"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{Noon}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="590" y="63" width="79" height="30" uuid="688d3610-c53d-473b-ae00-e643f4bbb129">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7ff10f6-210b-4642-8ed1-625b544bc95e"/>
+				<reportElement x="576" y="60" width="114" height="30" uuid="ad05ebde-cb2c-468c-8b92-eecaaff51449">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aee9dc99-ee80-4861-bd40-41c076ba9bae"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{Evening}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="700" y="63" width="102" height="30" uuid="b6504af9-eb54-423c-82de-6bef484b663e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c6fba91-373e-41f7-8c34-7a5a474c0151"/>
+				<reportElement x="690" y="60" width="114" height="30" uuid="b989d399-3df3-4fe2-8802-237ff2f12ca8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69474f03-a39a-4d68-9605-0d9c7b8bd194"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{Night}]]></textFieldExpression>
 			</textField>
