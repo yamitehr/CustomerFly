@@ -48,10 +48,12 @@ public class Consts {
 	/*----------------------------------------- AIRPORTS QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_AIRPORT = "SELECT * FROM AirPortTbl";
 	public static final String SQL_INS_AIRPORT = "{ call qryInsAirPort(?,?,?,?) }";
+	public static final String SQL_AIRPORT_EXIST ="";
 	
 	/*----------------------------------------- AIRPLANES QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_AIRPLANE = "SELECT * FROM AirPlaneTbl";
 	public static final String SQL_INS_AIRPLANE = "{ call qryInsAirPlane(?,?) }";
+	public static final String SQL_AIRPLANE_EXIST ="";
 	
 	/*------------------------------------------FLIGHT SEATS QUERIES ---------------------------------------*/
 	public static final String SQL_SEL_FLIGHTSEATS = "SELECT * FROM FlightSeatTbl";

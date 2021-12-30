@@ -1,6 +1,7 @@
 package entity;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 
 import util.FlightStatus;
 
@@ -70,8 +71,16 @@ public class Flight {
 	public void setAirplane(Airplane airplane) {
 		this.airplane = airplane;
 	}
-	
-	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Flight other = (Flight) obj;
+		return Objects.equals(flightID, other.flightID);
+	}
 
 }

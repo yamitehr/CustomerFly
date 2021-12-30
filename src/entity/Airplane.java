@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Airplane {
 	private String tailNumber;
@@ -26,6 +27,16 @@ public class Airplane {
 	}
 	public void setSeats(List<AirplaneSeat> seats) {
 		this.seats = seats;
+	}
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Airplane other = (Airplane) obj;
+		return Objects.equals(tailNumber, other.tailNumber);
 	}
 	
 	

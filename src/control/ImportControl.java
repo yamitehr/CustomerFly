@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -18,6 +19,8 @@ import entity.AirplaneSeat;
 import entity.Airport;
 import entity.Flight;
 import entity.FlightTicket;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import util.FlightStatus;
 
 public class ImportControl {
@@ -100,7 +103,6 @@ public class ImportControl {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			//System.out.println(e.getMessage());
 		} 
 		return ourJsonResult;		
 	}
@@ -109,16 +111,63 @@ public class ImportControl {
 		public static ArrayList<FlightTicket> getAllNeedToCall() {
 			ArrayList<Flight> ourJsonResult = importFlightsFromJson();
 			ArrayList<Flight> toUpdate = new ArrayList<>();
-			ArrayList<Flight> toInsert = new ArrayList<>();
-			ArrayList<Flight> allFlights = flightsControl.getFlights(); //the ids that exist
+			ArrayList<Flight> allFlights = flightsControl.getFlights();
 			int counterUpdate = 0;
 			int counterInsert = 0;
 
 			for(Flight value : ourJsonResult)
 			{
 				Boolean isExist = allFlights.contains(value);
+				Flight oldFlight = null;
+				if(isExist) {
+					oldFlight = allFlights.stream().filter(f -> f.equals(value)).findFirst().get();
+					
+					if(!value.getDepartureAirport().equals(oldFlight.getDepartureAirport())) {
+						if(!flightsControl.isExistAirport(value.getDepartureAirport())) {
+							flightsControl.addAirport(value.getDepartureAirport());
+						}
+					}
+					if(!value.getDestinationAirport().equals(oldFlight.getDestinationAirport())) {
+						if(!flightsControl.isExistAirport(value.getDestinationAirport())) {
+							flightsControl.addAirport(value.getDepartureAirport());
+						}
+					}
+					if(!value.getAirplane().equals(oldFlight.getAirplane())) {
+						if(!flightsControl.isExistAirplane(value.getAirplane())) {
+							flightsControl.addAirplane(value.getAirplane());
+						}
+					}
+					flightsControl.updateFlight(value);
+					toUpdate.add(value);
+					counterUpdate++;
+				}
+				else {
+					if(!flightsControl.isExistAirport(value.getDepartureAirport())) {
+						flightsControl.addAirport(value.getDepartureAirport());
+					}
+					if(!flightsControl.isExistAirport(value.getDestinationAirport())) {
+						flightsControl.addAirport(value.getDepartureAirport());
+					}
+					if(!flightsControl.isExistAirplane(value.getAirplane())) {
+						flightsControl.addAirplane(value.getAirplane());
+					}
+					flightsControl.addFlight(value);
+					counterInsert++;
+				}
 			}
-			return null;
+
+			Alert alert = new Alert(AlertType.INFORMATION, "We updated "+ counterUpdate+"\nWe inserted " + counterInsert);
+			alert.setHeaderText("Success");
+			alert.setTitle("Success");
+			alert.showAndWait();
+			
+			ArrayList <FlightTicket> tb = new ArrayList<FlightTicket>();
+			for(Flight shIn: toUpdate)
+			{
+			//	tb.addAll(getAllTicketByIDS(shIn));
+			}
+			
+			return tb;
 		}
 
 }
