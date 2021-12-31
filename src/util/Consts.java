@@ -14,7 +14,6 @@ public class Consts {
 	public static final String JDBC_STR = "net.ucanaccess.jdbc.UcanaccessDriver";
 	/*----------------------------------------- CONSTS VALUES -----------------------------------------*/
 	
-	
 	/*------------------------------------------ASSIGN TO SHIFTS QUERIES ---------------------------------------*/
 	/**
 	 * find the correct path of the DB file
