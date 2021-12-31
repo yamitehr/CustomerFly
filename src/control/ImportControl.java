@@ -147,12 +147,12 @@ public class ImportControl {
 								flightsControl.addFlightSeat(seat.getRow(), seat.getSeat(), seat.getAirplane().getTailNumber(), seat.getSeatClass().toString());
 							}
 						}
-					}else {//update seats in existing airplane //TODO: Necessary  ??
+					}/*else {//update seats in existing airplane //TODO: Necessary  ??
 						flightsControl.removeAirplaneSeat(value.getAirplane());
 						for(AirplaneSeat seat : value.getAirplane().getSeats()) {
 							flightsControl.addFlightSeat(seat.getRow(), seat.getSeat(), seat.getAirplane().getTailNumber(), seat.getSeatClass().toString());
 						}
-					}
+					}*/
 					flightsControl.updateFlight(value);
 					toUpdate.add(value);
 					counterUpdate++;
@@ -193,6 +193,16 @@ public class ImportControl {
 		
 		private static void findTicketsNeedToCancel(Flight flight) {
 			HashMap<SeatClass, Integer> seatsInPlame = flightsControl.getAllSeatsCounts(flight.getAirplane());
+			/*
+			seatsInPlame.put(SeatClass.Economy, 0);
+			seatsInPlame.put(SeatClass.Buisness, 0);
+			seatsInPlame.put(SeatClass.FirstClass, 0);
+			for (AirplaneSeat seat : flight.getAirplane().getSeats()) {
+				int num = seatsInPlame.get(SeatClass.valueOf(seat.getSeatClass()));
+				num = num +1;
+				seatsInPlame.put(SeatClass.valueOf(seat.getSeatClass()), num);
+			}*/
+			
 			HashMap<SeatClass, List<FlightTicket>> currentTicketsInFlight = flightsControl.getAllTicketsByClasses(flight);
 			//cancel all tickets if the flight is cancelled
 			if(flight.getStatus().equals(FlightStatus.Cancelled)) {
