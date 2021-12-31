@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import javax.swing.JFrame;
+
 import control.AlternativeFlightsLogic;
 import control.ImportControl;
 import control.ReportsLogic;
@@ -60,7 +62,7 @@ public class FrmImportUpdates
 	
 	//this method will happen after pressing the import JSON button
 	@FXML
-	public void onButtonClick(MouseEvent event)
+	public void importFlights(Event event)
 	{
 		allFlightsMap = ImportControl.getAllUpdatedFlightsAndTickets();
 		for(Map.Entry<Flight, HashMap<SeatClass, List<FlightTicket>>> entry : allFlightsMap.entrySet()){
@@ -95,5 +97,12 @@ public class FrmImportUpdates
 						currentFlight.getDestinationAirport().getCountry(), flightTicket.getSeatClass());
 			}
 		}
+	}
+	
+	@FXML
+	public void report(Event event) {
+		ReportsLogic reportLogic = ReportsLogic.getInstance();
+		JFrame frame = reportLogic.makeOrderDetailsReport();
+		frame.setVisible(true);
 	}
 }

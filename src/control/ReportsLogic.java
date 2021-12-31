@@ -36,7 +36,7 @@ public class ReportsLogic {
 	 * 
 	 * @return customers orders details report
 	 */
-	public   JFrame makeOrderDetailsReport() 
+	public JFrame makeOrderDetailsReport() 
 	{
 		
 		try {

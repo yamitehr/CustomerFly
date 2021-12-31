@@ -13,7 +13,7 @@
             <Font name="Guttman-Aharoni Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="btnSend" layoutX="35.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" prefHeight="44.0" prefWidth="230.0" text="Click Here To Import JSON">
+      <Button fx:id="btnSend" layoutX="35.0" layoutY="108.0" mnemonicParsing="false" onAction="#importFlights" prefHeight="44.0" prefWidth="230.0" text="Click Here To Import JSON">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font name="Guttman-Aharoni Bold" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnReport" layoutX="315.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" prefHeight="44.0" prefWidth="230.0" text="Orders Report">
+      <Button fx:id="btnReport" layoutX="315.0" layoutY="108.0" mnemonicParsing="false" onAction="#report" prefHeight="44.0" prefWidth="230.0" text="Orders Report">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
