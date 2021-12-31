@@ -18,7 +18,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="notifyButton" layoutX="35.0" layoutY="531.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="166.0" text="Notify a customer">
+      <Button fx:id="notifyButton" layoutX="35.0" layoutY="531.0" mnemonicParsing="false" onAction="#notify" prefHeight="38.0" prefWidth="166.0" text="Notify a customer">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
@@ -29,7 +29,6 @@
          </font>
       </Label>
       <Label fx:id="messageLbl" layoutX="135.0" layoutY="595.0" prefHeight="62.0" prefWidth="424.0" />
-      <Button fx:id="btnMail" layoutX="487.0" layoutY="95.0" mnemonicParsing="false" text="mail" />
       <ListView fx:id="affectedFlights" layoutX="35.0" layoutY="214.0" prefHeight="121.0" prefWidth="536.0" />
       <ListView fx:id="affectedTickets" layoutX="35.0" layoutY="385.0" prefHeight="130.0" prefWidth="536.0" />
       <Label layoutX="18.0" layoutY="328.0" prefHeight="62.0" prefWidth="594.0" text="Affected Flights Tickets:">
@@ -37,5 +36,10 @@
             <Font name="Guttman-Aharoni Bold" size="20.0" />
          </font>
       </Label>
+      <Button fx:id="btnReport" layoutX="315.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" prefHeight="44.0" prefWidth="230.0" text="Orders Report">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
