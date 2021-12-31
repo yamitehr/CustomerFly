@@ -166,7 +166,7 @@ public class FlightsControl {
 	}
 	
 	public HashMap<SeatClass, List<FlightTicket>>getAllTicketsByClasses(Flight flight) {
-		HashMap<SeatClass, List<FlightTicket>> toReturn = null;
+		HashMap<SeatClass, List<FlightTicket>> toReturn = new HashMap<SeatClass, List<FlightTicket>>();
 		List<FlightTicket> economyTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_ECONOMY);
 		List<FlightTicket> buisnessTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_BUISNESS);
 		List<FlightTicket> firstTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_FIRST);
@@ -215,25 +215,27 @@ public class FlightsControl {
 	public boolean addFlight(Flight flight) {
 		
 				try {
-					Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-					try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
-							CallableStatement stmt = conn.prepareCall(Consts.SQL_INS_FLIGHT)){
+					Class.forName(Consts.JDBC_STR);
+					try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
+							CallableStatement callst = conn.prepareCall(Consts.SQL_INS_FLIGHT)){
 						
 						int i = 1;
-						stmt.setString(i++, flight.getFlightID()); // can't be null
-						stmt.setString(i++, flight.getDepartureAirport().getAirportCode());
-						stmt.setTimestamp(i++, flight.getDepartureDateTime());
-						stmt.setString(i++, flight.getDestinationAirport().getAirportCode());
-						stmt.setTimestamp(i++, flight.getDestinationDateTime());
-						stmt.setString(i++, flight.getStatus().toString());
-						stmt.setString(i++, flight.getAirplane().getTailNumber());
-						stmt.setDate(i++, Date.valueOf(LocalDate.now()));
-						stmt.executeUpdate();
+						callst.setString(i++, flight.getFlightID()); // can't be null
+						callst.setString(i++, flight.getDepartureAirport().getAirportCode());
+						callst.setTimestamp(i++, flight.getDepartureDateTime());
+						callst.setString(i++, flight.getDestinationAirport().getAirportCode());
+						callst.setTimestamp(i++, flight.getDestinationDateTime());
+						callst.setString(i++, flight.getStatus().toString());
+						callst.setString(i++, flight.getAirplane().getTailNumber());
+						callst.setDate(i++, Date.valueOf(LocalDate.now()));
+						callst.executeUpdate();
 						return true;
 						
 					} catch (SQLException e) {
+						e.printStackTrace();
 					}
 				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
 				}
 		
 		return false;
@@ -281,13 +283,12 @@ public class FlightsControl {
 			return false;
 		}
 		
-		public boolean addFlightSeat(int id , int row, String col , String type ,String tailNum) {
+		public boolean addFlightSeat(int row, String col , String tailNum ,String type) {
 			try {
 				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 				try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
 						CallableStatement stmt = conn.prepareCall(Consts.SQL_INS_FLIGHTSEATS)){			
 					int i = 1;
-					stmt.setInt(i++, id);
 					stmt.setInt(i++, row);
 					stmt.setString(i++, col);
 					stmt.setString(i++, tailNum);
@@ -329,5 +330,24 @@ public class FlightsControl {
 			}
 		return false;
 			
+		}
+		
+		public boolean removeAirplaneSeat(Airplane airplane) {
+			try {
+				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+				try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+						CallableStatement stmt = conn.prepareCall(Consts.SQL_DELETE_SEATS)) {
+					
+					stmt.setString(1, airplane.getTailNumber());
+					stmt.executeUpdate();
+					return true;
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return false;
 		}
 }

@@ -41,25 +41,27 @@ public class Consts {
 	/*----------------------------------------- FLIGHTS QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_FLIGHT = "SELECT * FROM FlightTbl";
 	public static final String SQL_DEL_FLIGHT = "{ call qryDelFlight(?) }";
-	public static final String SQL_INS_FLIGHT = "{ call qryInsFlight(?,?,?,?,?,?,?,?) }";
 	public static final String SQL_UPD_FLIGHT = "{ call qryUpdFlight(?,?,?,?,?,?,?,?) }";
+	public static final String SQL_INS_FLIGHT = "{ call qryInsertFlight(?,?,?,?,?,?,?,?) }";
 
 	/*----------------------------------------- AIRPORTS QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_AIRPORT = "SELECT * FROM AirPortTbl";
-	public static final String SQL_INS_AIRPORT = "{ call qryInsAirPort(?,?,?,?) }";
-	public static final String SQL_AIRPORT_EXIST ="";
+	public static final String SQL_INS_AIRPORT = "{ call qryInsAirport(?,?,?) }";
+	public static final String SQL_AIRPORT_EXIST ="{ call qryGetAirport(?) }";
 	
 	/*----------------------------------------- AIRPLANES QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_AIRPLANE = "SELECT * FROM AirPlaneTbl";
-	public static final String SQL_INS_AIRPLANE = "{ call qryInsAirPlane(?,?) }";
-	public static final String SQL_AIRPLANE_EXIST ="";
+	public static final String SQL_INS_AIRPLANE = "{ call qryInsAirplane(?) }";
+	public static final String SQL_AIRPLANE_EXIST ="{ call qryGetAirplane(?) }";
 	
 	/*------------------------------------------FLIGHT SEATS QUERIES ---------------------------------------*/
 	public static final String SQL_SEL_FLIGHTSEATS = "SELECT * FROM FlightSeatTbl";
-	public static final String SQL_INS_FLIGHTSEATS = "{ call qryInsFlightSeat(?,?,?,?,?) }";
+	public static final String SQL_INS_FLIGHTSEATS = "{ call qryInsFlightSeat(?,?,?,?) }";
 	public static final String SQL_COUNT_ECONOMY_SEATS = "{ call qryCntEconomyClass(?) }";
 	public static final String SQL_COUNT_BUISNESS_SEATS = "{ call qryCntBuisnessClass(?) }";
 	public static final String SQL_COUNT_FIRST_SEATS = "{ call qryCntFirstClass(?) }";
+	public static final String SQL_DELETE_SEATS = "{ call qryDeleteSeat(?) }";
+	
 	
 	/*------------------------------------------FLIGHT TICKETS QUERIES ---------------------------------------*/
 	public static final String SQL_GET_FLIGHT_TICKETS_ECONOMY = " { call qryGetEconomyTicketByFlight(?) }";
