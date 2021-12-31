@@ -1,18 +1,18 @@
 {
 	"Flights":[
 		{
-			"FlightID" : "101",
-			"DepartureAirportCode":"TLV-345",
-			"DepartureDateTime":"2022-12-12 09:00:00.000000",
-			"DestinationAirportCode":"LND-125",
-			"DestinationDateTime" : "2022-12-12 13:00:00.000000",
-			"Status":"OnTime",
-			"AirplaneID":"A-987K",
-			"DepartureCountry" : "Israel",
-			"DepartureCity" : "Tel Aviv",
-			"DestinationCountry" : "England",
-			"DestinationCity" : "London",
-			"Seats":[
+			"FlightID": "101",
+			"DepartureAirportCode": "TLV-345",
+			"DepartureDateTime": "2022-12-12 09:00:00.000000",
+			"DestinationAirportCode": "BER-342",
+			"DestinationDateTime": "2022-12-12 13:00:00.000000",
+			"Status": "OnTime",
+			"AirplaneID": "A-987K",
+			"DepartureCountry": "Israel",
+			"DepartureCity": "Tel Aviv",
+			"DestinationCountry": "Germany",
+			"DestinationCity": "Berlin",
+			"Seats": [
 			]
 		},
 		{

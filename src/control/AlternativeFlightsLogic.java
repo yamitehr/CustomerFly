@@ -122,7 +122,6 @@ public class AlternativeFlightsLogic {
 		HashMap<Airplane,ArrayList<Integer>> results = getSeatsOfplane();
 		LocalDate cancelledDate = CancelledFlightDepDate.toLocalDateTime().toLocalDate();
 		String cancelledDateString = cancelledDate.getMonthValue()+"/"+cancelledDate.getDayOfMonth()+"/"+cancelledDate.getYear();
-		System.out.println(cancelledDateString);
 		ArrayList<Flight> alternativeFlights = getPossibleAltFlights(new possibleAlternateFlights(cancelledDateString,cityFrom,cityTo,counteyFrom,countryTo,cancelledFlightID));
 		ArrayList<Flight> flightsToRecommend = new ArrayList<Flight>();
 		
