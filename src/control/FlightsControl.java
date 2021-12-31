@@ -166,8 +166,16 @@ public class FlightsControl {
 	}
 	
 	public HashMap<SeatClass, List<FlightTicket>>getAllTicketsByClasses(Flight flight) {
+		HashMap<SeatClass, List<FlightTicket>> toReturn = null;
+		List<FlightTicket> economyTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_ECONOMY);
+		List<FlightTicket> buisnessTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_BUISNESS);
+		List<FlightTicket> firstTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_FIRST);
 		
-		return null;
+		toReturn.put(SeatClass.Economy, economyTickets);
+		toReturn.put(SeatClass.Buisness, buisnessTickets);
+		toReturn.put(SeatClass.FirstClass, firstTickets);
+		
+		return toReturn;
 	}
 	
 	private ArrayList<FlightTicket> getTicketsByClass(Flight flight, String query) {
