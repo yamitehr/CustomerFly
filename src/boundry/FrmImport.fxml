@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmImportUpdates">
    <children>
-      <Label layoutX="35.0" layoutY="34.0" prefHeight="74.0" prefWidth="511.0" text="Get Data from Show Scheduling" underline="true">
+      <Label layoutX="35.0" layoutY="34.0" prefHeight="74.0" prefWidth="546.0" text="Import Flights from Manager Fly" underline="true">
          <font>
             <Font name="Guttman-Aharoni Bold" size="36.0" />
          </font>
