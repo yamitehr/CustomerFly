@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 import javax.swing.JFrame;
 
-import entity.OrderDetail;
+
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.swing.JRViewer;
