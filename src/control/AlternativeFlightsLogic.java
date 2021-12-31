@@ -39,7 +39,7 @@ public class AlternativeFlightsLogic {
 		return _instance;
 	}
 	
-	public static HashMap<Airplane,ArrayList<Integer>> getSeatsOfplane() {
+	private static HashMap<Airplane,ArrayList<Integer>> getSeatsOfplane() {
 		HashMap<Airplane,ArrayList<Integer>> results = new HashMap<Airplane,ArrayList<Integer>>();
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -62,7 +62,7 @@ public class AlternativeFlightsLogic {
 		return results;
 	}
 	
-	public static  ArrayList<Integer> getTakenSeatsOfClassInFlight(TakenSeatsClass tsc) {
+	private static  ArrayList<Integer> getTakenSeatsOfClassInFlight(TakenSeatsClass tsc) {
 		ArrayList<Integer> results = new ArrayList<Integer>();
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -81,7 +81,7 @@ public class AlternativeFlightsLogic {
 		return results;
 	}
 	
-	public static ArrayList<Flight> getPossibleAltFlights(possibleAlternateFlights paf) {
+	private static ArrayList<Flight> getPossibleAltFlights(possibleAlternateFlights paf) {
 		ArrayList<Flight> results = new ArrayList<Flight>();
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -107,6 +107,16 @@ public class AlternativeFlightsLogic {
 		return results;
 	}
 	
+	/**
+	 * send message to customer which his/her order was cancelled, the message contains details of alternative flights
+	 * @param cancelledFlightID = cancelled order's flightID
+	 * @param CancelledFlightDepDate = cancelled order's flight departure date
+	 * @param cityFrom = cancelled order's flight departure city
+	 * @param cityTo = cancelled order's flight landing city
+	 * @param counteyFrom = cancelled order's flight departure country
+	 * @param countryTo = cancelled order's flight landing country
+	 * @param seatClass = cancelled order's chosen  class 
+	 */
 	public static void getAlternativeRecomandedFlights(String cancelledFlightID, Timestamp CancelledFlightDepDate, String cityFrom, String cityTo, String counteyFrom, String countryTo, SeatClass seatClass) {
 		
 		HashMap<Airplane,ArrayList<Integer>> results = getSeatsOfplane();

@@ -32,6 +32,10 @@ public class ReportsLogic {
 		return _instance;
 	}
 	
+	/**
+	 * 
+	 * @return customers orders details report
+	 */
 	public   JFrame makeOrderDetailsReport() 
 	{
 		
