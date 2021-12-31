@@ -14,14 +14,6 @@ public class Consts {
 	public static final String JDBC_STR = "net.ucanaccess.jdbc.UcanaccessDriver";
 	/*----------------------------------------- CONSTS VALUES -----------------------------------------*/
 	
-	public static final String SQL_ORDER_DETAILS_REPORT  = "SELECT AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID AS Morning, ALLNOONFLIGHTSQRY.CountOfFlightID AS Noon, ALLEVNINGFLIGHTSQRY.CountOfFlightID AS Evening, ALLNIGHTFLIGHTSQRY.CountOfFlightID\r\n"
-			+ "FROM (((AllCustomersOfUpdatedFlightsQry LEFT JOIN ALLNIGHTFLIGHTSQRY AS ALLNIGHTFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNIGHTFLIGHTSQRY.CustPassportID) LEFT JOIN ALLEVNINGFLIGHTSQRY AS ALLEVNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLEVNINGFLIGHTSQRY.CustPassportID) LEFT JOIN ALLNOONFLIGHTSQRY AS ALLNOONFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLNOONFLIGHTSQRY.CustPassportID) LEFT JOIN ALLMORNINGFLIGHTSQRY AS ALLMORNINGFLIGHTSQRY ON AllCustomersOfUpdatedFlightsQry.PassportID = ALLMORNINGFLIGHTSQRY.CustPassportID\r\n"
-			+ "GROUP BY AllCustomersOfUpdatedFlightsQry.PassportID, AllCustomersOfUpdatedFlightsQry.FirstName, AllCustomersOfUpdatedFlightsQry.LastName, ALLMORNINGFLIGHTSQRY.CountOfFlightID, ALLNOONFLIGHTSQRY.CountOfFlightID, ALLEVNINGFLIGHTSQRY.CountOfFlightID, ALLNIGHTFLIGHTSQRY.CountOfFlightID;\r\n"
-			+ "";
-			
-			
-			
-	
 	/*------------------------------------------ASSIGN TO SHIFTS QUERIES ---------------------------------------*/
 	/**
 	 * find the correct path of the DB file
