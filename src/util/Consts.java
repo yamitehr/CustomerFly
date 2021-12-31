@@ -57,5 +57,13 @@ public class Consts {
 	/*------------------------------------------FLIGHT SEATS QUERIES ---------------------------------------*/
 	public static final String SQL_SEL_FLIGHTSEATS = "SELECT * FROM FlightSeatTbl";
 	public static final String SQL_INS_FLIGHTSEATS = "{ call qryInsFlightSeat(?,?,?,?,?) }";
+	public static final String SQL_COUNT_ECONOMY_SEATS = "{ call qryCntEconomyClass(?) }";
+	public static final String SQL_COUNT_BUISNESS_SEATS = "{ call qryCntBuisnessClass(?) }";
+	public static final String SQL_COUNT_FIRST_SEATS = "{ call qryCntFirstClass(?) }";
+	
+	/*------------------------------------------FLIGHT TICKETS QUERIES ---------------------------------------*/
+	public static final String SQL_GET_FLIGHT_TICKETS_ECONOMY = " { call qryGetEconomyTicketByFlight(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_BUISNESS = " { call qryGetBuisnessTicketByFlight(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_FIRST = " { call qryGetFirstTicketByFlight(?) }";
 }
 

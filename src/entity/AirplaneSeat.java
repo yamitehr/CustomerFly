@@ -13,6 +13,17 @@ public class AirplaneSeat {
 		this.seatClass = seatClass;
 		this.airplane = airplane;
 	}
+	
+	
+
+	public AirplaneSeat(int row, String seat, Airplane airplane) {
+		super();
+		this.row = row;
+		this.seat = seat;
+		this.airplane = airplane;
+	}
+
+
 
 	public int getRow() {
 		return row;

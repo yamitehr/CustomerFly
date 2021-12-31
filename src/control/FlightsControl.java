@@ -9,12 +9,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import entity.Airplane;
+import entity.AirplaneSeat;
 import entity.Airport;
+import entity.Customer;
 import entity.Flight;
+import entity.FlightTicket;
+import entity.Order;
 import util.Consts;
 import util.FlightStatus;
+import util.MealType;
+import util.SeatClass;
 
 public class FlightsControl {
 	private static FlightsControl _instance;
@@ -116,6 +124,84 @@ public class FlightsControl {
 		
 	}
 	
+	public HashMap<SeatClass, Integer> getAllSeatsCounts(Airplane airplane){
+		HashMap<SeatClass, Integer> seatsCounts = new HashMap<SeatClass, Integer>();
+		int economyCount=0;
+		int buisnessCount=0;
+		int firstCount=0;
+		
+		economyCount = getNumOfSeatsByClass(airplane, Consts.SQL_COUNT_ECONOMY_SEATS);
+		buisnessCount = getNumOfSeatsByClass(airplane, Consts.SQL_COUNT_BUISNESS_SEATS);
+		firstCount = getNumOfSeatsByClass(airplane, Consts.SQL_COUNT_FIRST_SEATS);
+		seatsCounts.put(SeatClass.Economy, economyCount);
+		seatsCounts.put(SeatClass.Buisness, buisnessCount);
+		seatsCounts.put(SeatClass.FirstClass, firstCount);
+		
+		return seatsCounts;
+	}
+	
+	private int getNumOfSeatsByClass(Airplane airplane, String query) {
+		int count = 0;
+		try {
+			Class.forName(Consts.JDBC_STR);
+			try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
+					CallableStatement callst = conn.prepareCall(query))
+					{
+					int k=1;
+					callst.setString(k++, airplane.getTailNumber());
+					ResultSet rs = callst.executeQuery();
+					while (rs.next()) 
+					{
+						int i =1;
+						count = (rs.getInt(i++));
+					}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return count;	
+	}
+	
+	public HashMap<SeatClass, List<FlightTicket>>getAllTicketsByClasses(Flight flight) {
+		
+		return null;
+	}
+	
+	private ArrayList<FlightTicket> getTicketsByClass(Flight flight, String query) {
+		ArrayList<FlightTicket> results = new ArrayList<FlightTicket>();
+		try {
+			Class.forName(Consts.JDBC_STR);
+			try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
+					CallableStatement callst = conn.prepareCall(query))
+					{
+					int k=1;
+					callst.setString(k++, flight.getFlightID());
+					ResultSet rs = callst.executeQuery();
+					while (rs.next()) 
+					{
+						int i = 1;
+						FlightTicket flightTicket = new FlightTicket(new Order(rs.getInt(i++)),
+								rs.getInt(i++),
+								SeatClass.valueOf(rs.getString(i++)),
+								rs.getDouble(i++),
+							     new Customer(rs.getString(i++)),
+							     new Flight(rs.getString(i++)),
+							     new AirplaneSeat(rs.getInt(i++), rs.getString(i++), new Airplane(flight.getAirplane().getTailNumber())),
+							     new Airplane(rs.getString(i++)),
+							     MealType.valueOf(rs.getString(i++)));
+						results.add(flightTicket);
+					}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return results;
+	}
 	
 	//--------ADD---------//
 	public boolean addFlight(Flight flight) {
