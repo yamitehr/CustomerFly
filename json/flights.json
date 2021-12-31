@@ -7,57 +7,12 @@
 			"DestinationAirportCode":"LND-125",
 			"DestinationDateTime" : "2022-12-12 13:00:00.000000",
 			"Status":"OnTime",
-			"AirplaneID":"A-987",
+			"AirplaneID":"A-987K",
 			"DepartureCountry" : "Israel",
 			"DepartureCity" : "Tel Aviv",
 			"DestinationCountry" : "England",
 			"DestinationCity" : "London",
 			"Seats":[
-				{
-					"Row":"1"
-					"Seat":"A"
-					"Class":"Economy"
-				},
-				{
-					"Row":"1"
-					"Seat":"B"
-					"Class":"Economy"
-				},
-				{
-					"Row":"1"
-					"Seat":"C"
-					"Class":"Economy"
-				},
-				{
-					"Row":"2"
-					"Seat":"A"
-					"Class":"Buisness"
-				},
-				{
-					"Row":"2"
-					"Seat":"B"
-					"Class":"Buisness"
-				},
-				{
-					"Row":"2"
-					"Seat":"C"
-					"Class":"Buisness"
-				},
-				{
-					"Row":"3"
-					"Seat":"A"
-					"Class":"First Class"
-				},
-				{
-					"Row":"3"
-					"Seat":"B"
-					"Class":"First Class"
-				},
-				{
-					"Row":"3"
-					"Seat":"C"
-					"Class":"First Class"
-				}
 			]
 		},
 		{

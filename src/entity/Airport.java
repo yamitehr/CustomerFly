@@ -46,6 +46,10 @@ public class Airport {
 		Airport other = (Airport) obj;
 		return Objects.equals(airportCode, other.airportCode);
 	}
+	@Override
+	public String toString() {
+		return "Airport [airportCode=" + airportCode + ", country=" + country + ", city=" + city + "]";
+	}
 	
 	
 }

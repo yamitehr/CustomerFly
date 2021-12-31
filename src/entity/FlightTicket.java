@@ -86,4 +86,11 @@ public class FlightTicket {
 	public void setMealType(MealType mealType) {
 		this.mealType = mealType;
 	}
+	@Override
+	public String toString() {
+		return "FlightTicket [order=" + order + ", ticketID=" + ticketID + ", seatClass=" + seatClass + ", price="
+				+ price + ", customer=" + customer + ", flight=" + flight + ", seat=" + seat + ", airplane=" + airplane
+				+ ", mealType=" + mealType + "]";
+	}
+	
 }

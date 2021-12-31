@@ -82,5 +82,11 @@ public class Flight {
 		Flight other = (Flight) obj;
 		return Objects.equals(flightID, other.flightID);
 	}
-
+	@Override
+	public String toString() {
+		return "Flight [flightID=" + flightID + ", departureAirport=" + departureAirport + ", departureDateTime="
+				+ departureDateTime + ", destinationAirport=" + destinationAirport + ", destinationDateTime="
+				+ destinationDateTime + ", status=" + status + ", airplane=" + airplane + "]";
+	}
+	
 }

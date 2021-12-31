@@ -56,6 +56,14 @@ public class AirplaneSeat {
 	public void setAirplane(Airplane airplane) {
 		this.airplane = airplane;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "AirplaneSeat [row=" + row + ", seat=" + seat + ", seatClass=" + seatClass + ", airplane=" + airplane
+				+ "]";
+	}
 	
 	
 }

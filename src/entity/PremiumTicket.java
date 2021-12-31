@@ -45,5 +45,10 @@ public class PremiumTicket extends FlightTicket {
 	public void setRequest3(String request3) {
 		this.request3 = request3;
 	}
+	@Override
+	public String toString() {
+		return "PremiumTicket [luggageWeight=" + luggageWeight + ", request1=" + request1 + ", request2=" + request2
+				+ ", request3=" + request3 + "]";
+	}
 	
 }

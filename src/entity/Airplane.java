@@ -38,6 +38,10 @@ public class Airplane {
 		Airplane other = (Airplane) obj;
 		return Objects.equals(tailNumber, other.tailNumber);
 	}
+	@Override
+	public String toString() {
+		return "Airplane [tailNumber=" + tailNumber +"]";
+	}
 	
 	
 }

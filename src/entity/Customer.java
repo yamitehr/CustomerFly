@@ -61,6 +61,12 @@ public class Customer {
 	public void setCitizenship(String citizenship) {
 		this.citizenship = citizenship;
 	}
+
+	@Override
+	public String toString() {
+		return "Customer [passportID=" + passportID + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", birthDate=" + birthDate + ", citizenship=" + citizenship + "]";
+	}
 	
 	
 	

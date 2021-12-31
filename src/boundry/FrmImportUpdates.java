@@ -60,14 +60,14 @@ public class FrmImportUpdates
 		for(Map.Entry<Flight, HashMap<SeatClass, List<FlightTicket>>> entry : allFlightsMap.entrySet()){
 			flights.add(entry.getKey());
 		}
-		ObservableList<Flight> flt = FXCollections.observableList(flights);
+		ObservableList<Flight> flt = FXCollections.observableArrayList(flights);
 		affectedFlights.setItems(FXCollections.observableArrayList(flt));
 		
 		ArrayList<FlightTicket> flightTickets = new ArrayList<FlightTicket>();
 		for(FlightTicket ticket :  ImportControl.getCustmersCantSeat()) {
 			flightTickets.add(ticket);
 		}
-		ObservableList<FlightTicket> flttk = FXCollections.observableList(flightTickets);
+		ObservableList<FlightTicket> flttk = FXCollections.observableArrayList(flightTickets);
 		affectedTickets.setItems(FXCollections.observableArrayList(flttk));
 			
 	}
