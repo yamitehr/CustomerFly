@@ -28,6 +28,14 @@ public class Airplane {
 	public void setSeats(List<AirplaneSeat> seats) {
 		this.seats = seats;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((tailNumber == null) ? 0 : tailNumber.hashCode());
+		return result;
+	}
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -36,8 +44,14 @@ public class Airplane {
 		if (getClass() != obj.getClass())
 			return false;
 		Airplane other = (Airplane) obj;
-		return Objects.equals(tailNumber, other.tailNumber);
+		if (tailNumber == null) {
+			if (other.tailNumber != null)
+				return false;
+		} else if (!tailNumber.equals(other.tailNumber))
+			return false;
+		return true;
 	}
+	
 	
 	
 }
