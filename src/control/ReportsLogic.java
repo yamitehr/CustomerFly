@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 import javax.swing.JFrame;
 
-import entity.OrderDetail;
+
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.swing.JRViewer;
@@ -32,6 +32,10 @@ public class ReportsLogic {
 		return _instance;
 	}
 	
+	/**
+	 * 
+	 * @return customers orders details report
+	 */
 	public   JFrame makeOrderDetailsReport() 
 	{
 		

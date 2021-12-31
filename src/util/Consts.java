@@ -37,6 +37,24 @@ public class Consts {
 			return null;
 		}
 	}
+	/*----------------------------------------- ALTERNSTIVE FLIGHTS QUERIES------------------------------*/	
+	public static final String SQL_SEATS_NUM_BY_CLASS_PER_PLANE = "SELECT AirplaneTbl.TailNumber, Sum(IIF((FlightSeatTbl.Class Like 'FirstClass'),1,0)) AS FirstClassSeats, Sum(IIF((FlightSeatTbl.Class Like 'Buisness'),1,0)) AS BuisnessClassSeats, Sum(IIF((FlightSeatTbl.Class Like 'Economy'),1,0)) AS EconomyClassSeats\r\n"
+			+ "FROM AirplaneTbl INNER JOIN FlightSeatTbl ON AirplaneTbl.TailNumber = FlightSeatTbl.AirplaneID\r\n"
+			+ "GROUP BY AirplaneTbl.TailNumber;";
+	
+	public static String takenSeatsofClassOfFlight(String FlightID, String Class) {
+		return "SELECT Count(FlightTicketTbl.FlightID) AS CountOfFlightID\r\n"
+				+ "FROM FlightTicketTbl\r\n"
+				+ "WHERE (((FlightTicketTbl.FlightID) Like '" + FlightID + "' ) AND ((FlightTicketTbl.Class) Like '" + Class + "' ));";
+	}
+	
+	public static String possibleAltFlights(String date, String cityFrom, String cityTo, String countryFrom, String countryTo, String FlightID) {
+		
+		return "SELECT FlightTbl.FlightID, FlightTbl.DeaprtureDateTime, FlightTbl.FlightStatus, FlightTbl.AirplaneID\r\n"
+				+ "FROM AirportTbl AS AirportTbl_1 INNER JOIN (AirportTbl INNER JOIN FlightTbl ON AirportTbl.AirportCode = FlightTbl.DepartureAirport) ON AirportTbl_1.AirportCode = FlightTbl.DestinationAirport\r\n"
+				+ "WHERE (((DateDiff('d',Date(),FlightTbl.DeaprtureDateTime))>=14) And ((DateDiff('d', #" + date +"#,FlightTbl.DeaprtureDateTime)) Between -14 And 14) And ((AirportTbl.City) Like '" + cityFrom + "' ) And ((AirportTbl_1.City) Like '" + cityTo + "' ) And ((AirportTbl.Country) Like '" + countryFrom + "' ) And ((AirportTbl_1.Country) Like '" + countryTo + "' ) And ((FlightTbl.FlightID) Not Like '"+ FlightID +"' ) And ((FlightTbl.FlightStatus) Like 'OnTime'))\r\n"
+				+ "GROUP BY FlightTbl.FlightID, FlightTbl.DeaprtureDateTime, FlightTbl.FlightStatus, FlightTbl.AirplaneID;";
+	}
 	
 	/*----------------------------------------- FLIGHTS QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_FLIGHT = "SELECT * FROM FlightTbl";
