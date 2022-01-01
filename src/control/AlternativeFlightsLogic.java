@@ -159,7 +159,7 @@ public class AlternativeFlightsLogic {
 		ArrayList<Flight> flightsToRecommend = new ArrayList<Flight>();
 		
 		if(alternativeFlights == null || alternativeFlights.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "No alternative flights were found :(");
+			JOptionPane.showMessageDialog(null, "Order to flight " + cancelledFlightID+ " of Customer " + cust.getPassportID() + " was cancelled\n" + "No alternative flights were found :(");
 		}
 		else {
 			int classType = (seatClass.equals(SeatClass.FirstClass)?0:seatClass.equals(SeatClass.Buisness)?1:2);
@@ -172,7 +172,7 @@ public class AlternativeFlightsLogic {
 				}
 			}
 			if(flightsToRecommend.isEmpty()) {
-				JOptionPane.showMessageDialog(null, "No alternative flights were found :(");
+				JOptionPane.showMessageDialog(null, "Order to flight " + cancelledFlightID+ " of Customer " + cust.getPassportID() + " was cancelled\n" + "No alternative flights were found :(");
 			}
 			else {
 				OrderDetail od = getCustomerFlightsHistory(cust);
@@ -185,7 +185,9 @@ public class AlternativeFlightsLogic {
 						return -1 * comparingHourse(flight1H, flight1H,od);
 					}
 				});
-				String message = "FLIGHT ID  PLANE ID   DEPARTURE DATE    FLIGHT STATUS \n";
+				String message = "Order to flight " + cancelledFlightID+ " of Customer " + cust.getPassportID() + " was cancelled\n"
+						+ "message was sent to the customer with those alternative flights:\n"
+						+ " FLIGHT ID  PLANE ID   DEPARTURE DATE    FLIGHT STATUS \n";
 				for(Flight f: flightsToRecommend) {
 					message += f.getFlightID() + "      " + f.getAirplane().getTailNumber() + "       " + f.getDepartureDateTime() + "      " + f.getStatus() + ".\n";
 				}
