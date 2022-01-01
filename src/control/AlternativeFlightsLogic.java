@@ -17,11 +17,14 @@ import javax.swing.JOptionPane;
 
 import entity.Airplane;
 import entity.Airport;
+import entity.Customer;
 import entity.Flight;
+import entity.FlightTicket;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import util.Consts;
 import util.FlightStatus;
+import util.OrderDetail;
 import util.SeatClass;
 import util.TakenSeatsClass;
 import util.possibleAlternateFlights;
@@ -107,6 +110,36 @@ public class AlternativeFlightsLogic {
 		return results;
 	}
 	
+	private static OrderDetail getCustomerFlightsHistory(Customer cust) {
+		OrderDetail results = null ;
+		try {
+			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+			try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+					PreparedStatement stmt = conn.prepareStatement(Consts.customerFlightsHistory(cust.getPassportID()));
+					ResultSet rs = stmt.executeQuery()) {
+				while (rs.next()) {
+					int i = 1;
+					String Passport = rs.getString(i++);
+					Integer morning = rs.getInt(i++);
+					morning = (morning == null)?null:morning;
+					Integer noon = rs.getInt(i++);
+					noon = (noon == null)?null:noon;
+					Integer evening = rs.getInt(i++);
+					evening = (evening == null)?null:evening;
+					Integer night = rs.getInt(i++);
+					evening = (evening == null)?null:evening;
+					
+					results = new OrderDetail(Passport,morning, noon, evening, night);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return results;
+	}
+	
 	/**
 	 * send message to customer which his/her order was cancelled, the message contains details of alternative flights
 	 * @param cancelledFlightID = cancelled order's flightID
@@ -117,7 +150,7 @@ public class AlternativeFlightsLogic {
 	 * @param countryTo = cancelled order's flight landing country
 	 * @param seatClass = cancelled order's chosen  class 
 	 */
-	public static void getAlternativeRecomandedFlights(String cancelledFlightID, Timestamp CancelledFlightDepDate, String cityFrom, String cityTo, String counteyFrom, String countryTo, SeatClass seatClass) {
+	public static void getAlternativeRecomandedFlights(String cancelledFlightID, Timestamp CancelledFlightDepDate, String cityFrom, String cityTo, String counteyFrom, String countryTo, SeatClass seatClass,Customer cust) {
 		
 		HashMap<Airplane,ArrayList<Integer>> results = getSeatsOfplane();
 		LocalDate cancelledDate = CancelledFlightDepDate.toLocalDateTime().toLocalDate();
@@ -133,6 +166,7 @@ public class AlternativeFlightsLogic {
 			
 			for(Flight f: alternativeFlights) {
 				ArrayList<Integer> takenSeats = getTakenSeatsOfClassInFlight(new TakenSeatsClass(f.getFlightID(),seatClass.toString()));
+				
 				if(results.get(f.getAirplane()).get(classType) - takenSeats.get(0) > 0) {
 					flightsToRecommend.add(f);
 				}
@@ -141,6 +175,16 @@ public class AlternativeFlightsLogic {
 				JOptionPane.showMessageDialog(null, "No alternative flights were found :(");
 			}
 			else {
+				OrderDetail od = getCustomerFlightsHistory(cust);
+				flightsToRecommend.sort((Flight f1, Flight f2) -> {
+					int flight1H = getDepTime(f1);
+					int flight2H = getDepTime(f2);
+					if(flight1H == flight2H)
+						return 0;
+					else {
+						return -1 * comparingHourse(flight1H, flight1H,od);
+					}
+				});
 				String message = "FLIGHT ID  PLANE ID   DEPARTURE DATE    FLIGHT STATUS \n";
 				for(Flight f: flightsToRecommend) {
 					message += f.getFlightID() + "      " + f.getAirplane().getTailNumber() + "       " + f.getDepartureDateTime() + "      " + f.getStatus() + ".\n";
@@ -154,7 +198,8 @@ public class AlternativeFlightsLogic {
 	
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
-		
+		OrderDetail o = getCustomerFlightsHistory(new Customer("254766345"));
+		System.out.println(o.morning + " " + o.noon + " " + o.evening + " " + o.night);
 		System.out.println(getTakenSeatsOfClassInFlight(new TakenSeatsClass("543234","Economy")));
 		HashMap<Airplane,ArrayList<Integer>> results = getSeatsOfplane();
 		results.forEach((key,value) -> System.out.println(key.getTailNumber() + " " + value.get(0) + " " + value.get(1) + " " + value.get(2)));
@@ -165,6 +210,44 @@ public class AlternativeFlightsLogic {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		java.util.Date date = sdf.parse("2022/12/14");
 		Timestamp Date = new Timestamp(date.getTime());
-		getAlternativeRecomandedFlights("112233", Date, "Tel Aviv","Berlin","Israel","Germany", SeatClass.Economy);
+		//getAlternativeRecomandedFlights("112233", Date, "Tel Aviv","Berlin","Israel","Germany", SeatClass.Economy);
+	}
+	
+	
+	private static int getDepTime(Flight f) {
+		int hour = f.getDepartureDateTime().toLocalDateTime().getHour();
+		return (hour >= 5 && hour < 11)?0:(hour >= 11 && hour < 17)?1:(hour >= 17 && hour < 23)?2:3;
+	}
+	
+	private static int comparingHourse(int h1, int h2, OrderDetail od) {
+		
+		if(h1 == 0) {
+			if(h2 == 1)
+				return od.morning - od.noon;
+			else if(h2 == 2)
+				return od.morning -od.evening;
+			return od.morning-od.night;
+		}
+		else if(h1 == 1) {
+			if(h2 == 0)
+				return od.noon - od.morning;
+			else if(h2 == 2)
+				return od.noon -od.evening;
+			return od.noon-od.night;
+		}
+		else if(h1 == 2) {
+			if(h2 == 0)
+				return od.evening - od.morning;
+			else if(h2 == 1)
+				return od.evening -od.noon;
+			return od.evening-od.night;
+		}
+		else {
+			if(h2 == 0)
+				return od.night - od.morning;
+			else if(h2 == 1)
+				return od.night -od.noon;
+			return od.night-od.evening;
+		}
 	}
 }

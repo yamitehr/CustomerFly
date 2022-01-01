@@ -56,6 +56,15 @@ public class Consts {
 				+ "GROUP BY FlightTbl.FlightID, FlightTbl.DeaprtureDateTime, FlightTbl.FlightStatus, FlightTbl.AirplaneID;";
 	}
 	
+	public static String customerFlightsHistory(String passport) {
+		
+		return "SELECT OrdersDetailsReportQry.PassportID, OrdersDetailsReportQry.Morning, OrdersDetailsReportQry.Noon, OrdersDetailsReportQry.Evening, OrdersDetailsReportQry.Night\r\n"
+				+ "FROM OrdersDetailsReportQry\r\n"
+				+ "WHERE (((OrdersDetailsReportQry.PassportID) Like '" + passport +"' ))\r\n"
+				+ "GROUP BY OrdersDetailsReportQry.PassportID, OrdersDetailsReportQry.Morning, OrdersDetailsReportQry.Noon, OrdersDetailsReportQry.Evening, OrdersDetailsReportQry.Night;\r\n"
+				+ "";
+	}
+	
 	/*----------------------------------------- FLIGHTS QUERIES -----------------------------------------*/
 	public static final String SQL_SEL_FLIGHT = "SELECT * FROM FlightTbl";
 	public static final String SQL_DEL_FLIGHT = "{ call qryDelFlight(?) }";

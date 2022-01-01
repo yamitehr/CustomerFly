@@ -94,7 +94,7 @@ public class FrmImportUpdates
 				alterFlightLogic.getAlternativeRecomandedFlights(currentFlight.getFlightID(), currentFlight.getDepartureDateTime(),
 						currentFlight.getDepartureAirport().getCity(),
 						currentFlight.getDestinationAirport().getCity(), currentFlight.getDepartureAirport().getCountry(),
-						currentFlight.getDestinationAirport().getCountry(), flightTicket.getSeatClass());
+						currentFlight.getDestinationAirport().getCountry(), flightTicket.getSeatClass(),affectedTickets.getSelectionModel().getSelectedItem().getCustomer());
 			}
 		}
 	}
