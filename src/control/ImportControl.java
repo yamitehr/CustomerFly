@@ -147,7 +147,7 @@ public class ImportControl {
 								flightsControl.addFlightSeat(seat.getRow(), seat.getSeat(), seat.getAirplane().getTailNumber(), seat.getSeatClass().toString());
 							}
 						}
-					}/*else {//update seats in existing airplane //TODO: Necessary  ??
+					}/*else {//update seats in existing airplane 
 						flightsControl.removeAirplaneSeat(value.getAirplane());
 						for(AirplaneSeat seat : value.getAirplane().getSeats()) {
 							flightsControl.addFlightSeat(seat.getRow(), seat.getSeat(), seat.getAirplane().getTailNumber(), seat.getSeatClass().toString());

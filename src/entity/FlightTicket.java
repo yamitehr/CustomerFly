@@ -88,9 +88,7 @@ public class FlightTicket {
 	}
 	@Override
 	public String toString() {
-		return "FlightTicket [order=" + order + ", ticketID=" + ticketID + ", seatClass=" + seatClass + ", price="
-				+ price + ", customer=" + customer + ", flight=" + flight + ", seat=" + seat + ", airplane=" + airplane
-				+ ", mealType=" + mealType + "]";
+		return "Ticket number " + ticketID + ", of OrderID " + order.getOrderID() + ", Class " + seatClass + ", customer passport " + customer.getPassportID() + ", flight number" + flight.getFlightID() + ", seat " + seat.getRow() + seat.getSeat();
 	}
 	
 }

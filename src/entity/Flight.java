@@ -84,9 +84,9 @@ public class Flight {
 	}
 	@Override
 	public String toString() {
-		return "Flight [flightID=" + flightID + ", departureAirport=" + departureAirport + ", departureDateTime="
-				+ departureDateTime + ", destinationAirport=" + destinationAirport + ", destinationDateTime="
-				+ destinationDateTime + ", status=" + status + ", airplane=" + airplane + "]";
+		return "Flight Number" + flightID + ", Departue at " + departureAirport.getCity() + " "+ departureAirport.getCountry() + ", Departure time "
+				+ departureDateTime + ", Destination is " + destinationAirport.getCity() + " " + destinationAirport.getCountry() + ", Landing time "
+				+ destinationDateTime + ", Status=" + status;
 	}
 	
 }

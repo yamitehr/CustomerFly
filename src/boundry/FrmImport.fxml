@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmImportUpdates">
    <children>
-      <Label layoutX="35.0" layoutY="34.0" prefHeight="74.0" prefWidth="546.0" text="Import Flights from Manager Fly" underline="true">
+      <Label layoutX="35.0" layoutY="34.0" prefHeight="74.0" prefWidth="546.0" text="Handle Flights Updates" underline="true">
          <font>
             <Font name="Guttman-Aharoni Bold" size="36.0" />
          </font>
@@ -18,7 +18,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="notifyButton" layoutX="35.0" layoutY="531.0" mnemonicParsing="false" onAction="#notify" prefHeight="38.0" prefWidth="166.0" text="Notify a customer">
+      <Button fx:id="notifyButton" layoutX="35.0" layoutY="531.0" mnemonicParsing="false" onAction="#notify" prefHeight="38.0" prefWidth="290.0" text="Cancel Ticket &amp; Notify customer">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>

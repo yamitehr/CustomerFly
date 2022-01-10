@@ -1,5 +1,6 @@
 package control;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -197,7 +198,7 @@ public class AlternativeFlightsLogic {
 			}
 		}
 	}
-	
+	/*
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		OrderDetail o = getCustomerFlightsHistory(new Customer("254766345"));
@@ -213,6 +214,28 @@ public class AlternativeFlightsLogic {
 		java.util.Date date = sdf.parse("2022/12/14");
 		Timestamp Date = new Timestamp(date.getTime());
 		//getAlternativeRecomandedFlights("112233", Date, "Tel Aviv","Berlin","Israel","Germany", SeatClass.Economy);
+	}*/
+	
+	public static boolean cancelFlightTicket(FlightTicket ticket) {
+		try {
+			Class.forName(Consts.JDBC_STR);
+			try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
+					CallableStatement stmt =  conn.prepareCall(util.Consts.SQL_CANCEL_TICKET)){
+				int i = 1;
+				stmt.setInt(i++, ticket.getOrder().getOrderID());
+				stmt.setInt(i++, ticket.getTicketID());
+
+				
+				stmt.executeUpdate();
+			}
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 	

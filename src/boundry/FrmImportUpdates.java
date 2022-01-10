@@ -90,6 +90,7 @@ public class FrmImportUpdates
 					currentFlight = flight;
 				}
 			}
+			alterFlightLogic.cancelFlightTicket(flightTicket);
 			if(currentFlight != null) {
 				alterFlightLogic.getAlternativeRecomandedFlights(currentFlight.getFlightID(), currentFlight.getDepartureDateTime(),
 						currentFlight.getDepartureAirport().getCity(),

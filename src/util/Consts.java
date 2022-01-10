@@ -94,5 +94,6 @@ public class Consts {
 	public static final String SQL_GET_FLIGHT_TICKETS_ECONOMY = " { call qryGetEconomyTicketByFlight(?) }";
 	public static final String SQL_GET_FLIGHT_TICKETS_BUISNESS = " { call qryGetBuisnessTicketByFlight(?) }";
 	public static final String SQL_GET_FLIGHT_TICKETS_FIRST = " { call qryGetFirstTicketByFlight(?) }";
+	public static final String SQL_CANCEL_TICKET = "{ call qryCancelTicket(?,?) }";
 }
 
