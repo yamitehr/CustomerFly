@@ -198,23 +198,7 @@ public class AlternativeFlightsLogic {
 			}
 		}
 	}
-	/*
-	public static void main(String[] args) throws ParseException {
-		// TODO Auto-generated method stub
-		OrderDetail o = getCustomerFlightsHistory(new Customer("254766345"));
-		System.out.println(o.morning + " " + o.noon + " " + o.evening + " " + o.night);
-		System.out.println(getTakenSeatsOfClassInFlight(new TakenSeatsClass("543234","Economy")));
-		HashMap<Airplane,ArrayList<Integer>> results = getSeatsOfplane();
-		results.forEach((key,value) -> System.out.println(key.getTailNumber() + " " + value.get(0) + " " + value.get(1) + " " + value.get(2)));
-		ArrayList<Flight>alternativeFlights = getPossibleAltFlights(new possibleAlternateFlights("12/14/2022","Tel Aviv","Berlin","Israel","Germany","112233"));
-		for(Flight f: alternativeFlights) {
-			System.out.println(f.getFlightID() + " " + f.getAirplane().getTailNumber() + " " + f.getDepartureDateTime() + " " + f.getStatus());
-		}
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-		java.util.Date date = sdf.parse("2022/12/14");
-		Timestamp Date = new Timestamp(date.getTime());
-		//getAlternativeRecomandedFlights("112233", Date, "Tel Aviv","Berlin","Israel","Germany", SeatClass.Economy);
-	}*/
+	
 	
 	public static boolean cancelFlightTicket(FlightTicket ticket) {
 		try {
