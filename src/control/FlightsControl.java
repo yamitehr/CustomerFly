@@ -26,7 +26,7 @@ import util.SeatClass;
 
 public class FlightsControl {
 	private static FlightsControl _instance;
-
+//rotem
 	public static FlightsControl getInstance() {
 		if (_instance == null)
 			_instance = new FlightsControl();
