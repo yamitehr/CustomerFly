@@ -64,7 +64,7 @@ public class FlightsControl {
 		return results;
 	}
 	
-
+	//Check
 	public boolean isExistAirport(Airport airport)
 	{
 		String id = airport.getAirportCode();
