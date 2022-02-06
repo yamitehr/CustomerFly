@@ -14,10 +14,10 @@ public class EntertainProduct {
 		ProductID = productID;
 		Name = name;
 		Description = description;
-		if(type.equals(ProductType.Movie)) {
+		if(type.equals("Movie")) {
 			Type = ProductType.Movie;
 		}
-		else if(type.equals(ProductType.VideoGame)) {
+		else if(type.equals("VideoGame")) {
 			Type = ProductType.VideoGame;
 		}
 	}

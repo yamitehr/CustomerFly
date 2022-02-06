@@ -51,4 +51,11 @@ public class HomeScreenAdmin {
 			movePage("LoginScreen");
 		}
 		
+		@FXML
+		public void productInFlightMove(MouseEvent event) throws Exception
+		{
+			movePage("AddProductToFlight");
+		}
+		
+		
 }

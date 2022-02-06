@@ -62,12 +62,37 @@ private static ProductSupplierControl _instance;
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 			try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
-					PreparedStatement stmt = conn.prepareStatement(Consts.SQL_GET_SUPPLIERS);
+					PreparedStatement stmt = conn.prepareStatement(Consts.SQL_GET_PRODUCTS);
 					ResultSet rs = stmt.executeQuery()) {
 				while (rs.next()) {
 					int i = 1;
 					EntertainProduct product = new EntertainProduct(rs.getInt(i++),rs.getString(i++),rs.getString(i++),
 							rs.getString(i++));
+					results.add(product);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return results;
+	}
+	
+	/**
+	 * fetches all products from DB file.
+	 * @return ArrayList of customers.
+	 */
+	public ArrayList<ProductOfSupplier> getProductsOfSupplier() {
+		ArrayList<ProductOfSupplier> results = new ArrayList<ProductOfSupplier>();
+		try {
+			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+			try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+					PreparedStatement stmt = conn.prepareStatement(Consts.SQL_GET_PRODUCTS_OF_SUPPLIERS);
+					ResultSet rs = stmt.executeQuery()) {
+				while (rs.next()) {
+					int i = 1;
+					ProductOfSupplier product = new ProductOfSupplier(rs.getInt(i++),rs.getInt(i++));
 					results.add(product);
 				}
 			} catch (SQLException e) {
@@ -198,7 +223,7 @@ private static ProductSupplierControl _instance;
 					int i = 1;
 					stmt.setString(i++, pos.getFlightId());
 					stmt.setInt(i++, pos.getSupplierID());
-					stmt.setInt(i++, pos.getSupplierID());
+					stmt.setInt(i++, pos.getProductId());
 					stmt.setString(i++, pos.getFeedback());
 					stmt.executeUpdate();
 					return true;

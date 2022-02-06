@@ -1,7 +1,10 @@
 package boundry;
 
+import control.ProductSupplierControl;
 import entity.Order;
 import entity.Supplier;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +33,15 @@ public class Suppliers {
     
     @FXML
     private Button showProducts;
+    
+ private ProductSupplierControl productSupplierIns = ProductSupplierControl.getInstance();
+    
+    @FXML
+	public void initialize() 
+	{
+    	ObservableList<Supplier> sup = FXCollections.observableArrayList(productSupplierIns.getSuppliers());
+    	suppliersList.setItems(FXCollections.observableArrayList(sup));
+	}
     
     public void moveHomeScreen(ActionEvent event) throws Exception
 	{

@@ -26,6 +26,11 @@ public class ProductOfSupplier {
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
+
+	@Override
+	public String toString() {
+		return "ProductOfSupplier [supplierID=" + supplierID + ", productId=" + productId + "]";
+	}
 	
 	
 }

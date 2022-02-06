@@ -46,6 +46,12 @@ public class ProductOfSupplierInFlight {
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
+
+	@Override
+	public String toString() {
+		return "ProductOfSupplierInFlight [flightId=" + flightId + ", supplierID=" + supplierID + ", productId="
+				+ productId + ", feedback=" + feedback + "]";
+	}
 	
 	
 }

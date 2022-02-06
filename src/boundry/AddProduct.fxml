@@ -3,11 +3,15 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="addProduct" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.AddProduct">
+<AnchorPane fx:id="addProduct" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.AddProduct">
    <children>
       <Text fill="#53bdff" layoutX="188.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Product:">
          <font>
@@ -30,7 +34,7 @@
          </font>
       </Text>
       <ComboBox fx:id="type" layoutX="237.0" layoutY="344.0" prefWidth="150.0" promptText="select" />
-      <Button fx:id="saveSupplier" layoutX="564.0" layoutY="646.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Save">
+      <Button fx:id="saveSupplier" layoutX="564.0" layoutY="646.0" mnemonicParsing="false" onAction="#saveProduct" prefHeight="25.0" prefWidth="53.0" text="Save">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -40,13 +44,46 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="productID" layoutX="214.0" layoutY="145.0" />
-      <TextField fx:id="productName" layoutX="231.0" layoutY="195.0" />
-      <TextField fx:id="description" layoutX="209.0" layoutY="249.0" prefHeight="75.0" prefWidth="229.0" />
+      <TextField fx:id="productID" layoutX="237.0" layoutY="144.0" />
+      <TextField fx:id="name" layoutX="240.0" layoutY="194.0" />
+      <TextField fx:id="description" layoutX="237.0" layoutY="245.0" prefHeight="75.0" prefWidth="229.0" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#moveToList" text="Back to list">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
+      <Text layoutX="95.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a supplier to provide this product:" wrappingWidth="367.99999084472665">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="suppliers" layoutX="212.0" layoutY="456.0" prefHeight="26.0" prefWidth="202.0" promptText="select" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="5.0" layoutY="387.0" stroke="BLACK" strokeType="INSIDE" width="630.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <TitledPane fx:id="newSup" animated="false" layoutX="214.0" layoutY="498.0" prefHeight="181.0" prefWidth="202.0" text="Add New Supplier">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="201.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SupplierID:" />
+                  <Text layoutX="14.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+                  <Text layoutX="14.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                  <Text layoutX="16.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
+                  <TextField fx:id="supID" layoutX="80.0" layoutY="18.0" prefHeight="27.0" prefWidth="86.0" />
+                  <TextField fx:id="supName" layoutX="80.0" layoutY="45.0" prefHeight="27.0" prefWidth="86.0" />
+                  <TextField fx:id="supEmail" layoutX="80.0" layoutY="72.0" prefHeight="27.0" prefWidth="86.0" />
+                  <TextField fx:id="supFax" layoutX="80.0" layoutY="99.0" prefHeight="27.0" prefWidth="86.0" />
+                  <Button fx:id="saveSup" layoutX="79.0" layoutY="128.0" mnemonicParsing="false" onAction="#addSupplier" text="Save Supplier" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
    </children>
 </AnchorPane>

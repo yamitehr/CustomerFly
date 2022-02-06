@@ -118,8 +118,9 @@ public class Consts {
 	
 	public static final String SQL_GET_SUPPLIERS = "SELECT * FROM SupplierTbl;";
 	public static final String SQL_GET_PRODUCTS = "SELECT * FROM EntertainProductTbl;";
+	public static final String SQL_GET_PRODUCTS_OF_SUPPLIERS = "SELECT * FROM ProductOfSupplierTbl;";
 	public static final String SQL_GET_PRODUCTS_SUPPLIER_BY_FLIGHT = "SELECT * FROM ProductOfSupplierInFlightTbl WHERE FlightID=?;";
-	public static final String SQL_INSERT_SUPPLIER = "INSERT INTO CustomerTbl VALUES(?,?,?,?,?);";
+	public static final String SQL_INSERT_SUPPLIER = "INSERT INTO SupplierTbl VALUES(?,?,?,?,?);";
 	public static final String SQL_INSERT_PRODUCT = "INSERT INTO EntertainProductTbl VALUES(?,?,?,?);";
 	public static final String SQL_INSERT_SUPPLIER_PRODUCT = "INSERT INTO ProductOfSupplierTbl VALUES(?,?);";
 	public static final String SQL_INSERT_SUPPLIER_PRODUCT_FLIGHT = "INSERT INTO ProductOfSupplierInFlightTbl VALUES(?,?,?,?);";
