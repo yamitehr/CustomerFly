@@ -95,5 +95,16 @@ public class Consts {
 	public static final String SQL_GET_FLIGHT_TICKETS_BUISNESS = " { call qryGetBuisnessTicketByFlight(?) }";
 	public static final String SQL_GET_FLIGHT_TICKETS_FIRST = " { call qryGetFirstTicketByFlight(?) }";
 	public static final String SQL_CANCEL_TICKET = "{ call qryCancelTicket(?,?) }";
+	
+	
+	//getting all customers
+		public static final String SQL_SEL_ALL_CUSTOMERS = "SELECT CustomerTbl.passportID, CustomerTbl.FirstName, CustomerTbl.LastName, CustomerTbl.Email, CustomerTbl.BirthDate ,CustomerTbl.CitizenShip, CustomerTbl.Password\r\n"
+				+ "FROM CustomerTbl ";
+		
+	//for Register//
+	public static final String SQL_INS_CUSTOMER=" { call qryInsCustomer(?,?,?,?,?,?,?) }";
+	public static final String SQL_UPD_CUSTOMER = "{ call qryUpdCustomer(?,?,?,?,?,?,?) }";
+	
+
 }
 

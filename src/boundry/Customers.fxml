@@ -24,9 +24,14 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="newCustomer" layoutX="27.0" layoutY="102.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0" text="+">
+      <Button fx:id="newCustomer" layoutX="406.0" layoutY="644.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="27.0" prefWidth="56.0" text="New">
          <font>
             <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#moveHomeScreen" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Button>
    </children>

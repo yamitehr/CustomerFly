@@ -22,7 +22,7 @@ public class Main extends Application{
 		
 		try {
 			stg  = primaryStage;
-			Parent root = FXMLLoader.load(getClass().getResource("FrmImport.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Manager-Fly");
@@ -47,5 +47,7 @@ public class Main extends Application{
 	//	imp.getAllUpdatedFlightsAndTickets();
 		launch(args);
 	}
+
+
 
 }

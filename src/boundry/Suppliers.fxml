@@ -24,7 +24,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="newSupplier" layoutX="408.0" layoutY="640.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="59.0" text="New">
+      <Button fx:id="newSupplier" layoutX="408.0" layoutY="640.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="27.0" prefWidth="59.0" text="New">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -32,6 +32,11 @@
       <Button fx:id="showProducts" layoutX="434.0" layoutY="102.0" mnemonicParsing="false" text="Show entertain products">
          <font>
             <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#moveHomeScreen" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Button>
    </children>

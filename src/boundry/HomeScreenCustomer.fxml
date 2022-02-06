@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="homeCustomer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.HomeScreenCustomer">
+   <children>
+      <Text fill="#3dbafd" layoutX="95.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Customer-Fly!" textAlignment="CENTER" wrappingWidth="439.4700012207031">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Button layoutX="218.0" layoutY="343.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="193.0" text="My Orders">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="218.0" layoutY="213.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="193.0" text="New Order">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#logout" text="Logout">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="218.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#personalInfoMove" prefHeight="79.0" prefWidth="193.0" text="Personal Information" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
