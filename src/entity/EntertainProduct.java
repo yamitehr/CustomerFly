@@ -9,12 +9,17 @@ public class EntertainProduct {
 	String Description;
 	ProductType Type;
 
-	public EntertainProduct(int productID, String name, String description, ProductType type) {
+	public EntertainProduct(int productID, String name, String description, String type) {
 		super();
 		ProductID = productID;
 		Name = name;
 		Description = description;
-		Type = type;
+		if(type.equals(ProductType.Movie)) {
+			Type = ProductType.Movie;
+		}
+		else if(type.equals(ProductType.VideoGame)) {
+			Type = ProductType.VideoGame;
+		}
 	}
 
 	public int getProductID() {

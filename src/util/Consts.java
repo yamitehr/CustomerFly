@@ -106,5 +106,28 @@ public class Consts {
 	public static final String SQL_UPD_CUSTOMER = "{ call qryUpdCustomer(?,?,?,?,?,?,?) }";
 	
 
+	public static final String SQL_CANCEL_FLIGHT = "UPDATE FlightTbl SET FlightStatus='Canceled' WHERE FlightID=?;";
+	public static final String SQL_GET_ALL_CUSTOMERS = "SELECT * FROM CustomerTbl;";
+	public static final String SQL_INSERT_CUSTOMERS = "INSERT INTO CustomerTbl VALUES(?,?,?,?,?,?);";
+	public static final String SQL_GET_ALL_ORDERS = "SELECT * FROM OrderTbl;";
+	public static final String SQL_INSERT_ORDER = "INSERT INTO OrderTbl VALUES(?,?,?);";
+	public static final String SQL_GET_FLIGHT = "SELECT * FROM FlightTbl WHERE FlightID=?;";
+	public static final String SQL_ADD_TICKET = "INSERT INTO FlightTicketTbl VALUES(?,?,?,?,?,?,?,?,?,?,?);";
+	public static final String SQL_ADD_PREMIUNM_TICKET = "INSERT INTO PremFlightTicketTbl VALUES(?,?,?,?,?,?);";
+	public static final String SQL_UPDATE_TICKET_PRICE = "UPDATE FlightTicketTbl SET Price=? WHERE OrderID=? AND TicketID=?;";
+	
+	public static final String SQL_GET_SUPPLIERS = "SELECT * FROM SupplierTbl;";
+	public static final String SQL_GET_PRODUCTS = "SELECT * FROM EntertainProductTbl;";
+	public static final String SQL_GET_PRODUCTS_SUPPLIER_BY_FLIGHT = "SELECT * FROM ProductOfSupplierInFlightTbl WHERE FlightID=?;";
+	public static final String SQL_INSERT_SUPPLIER = "INSERT INTO CustomerTbl VALUES(?,?,?,?,?);";
+	public static final String SQL_INSERT_PRODUCT = "INSERT INTO EntertainProductTbl VALUES(?,?,?,?);";
+	public static final String SQL_INSERT_SUPPLIER_PRODUCT = "INSERT INTO ProductOfSupplierTbl VALUES(?,?);";
+	public static final String SQL_INSERT_SUPPLIER_PRODUCT_FLIGHT = "INSERT INTO ProductOfSupplierInFlightTbl VALUES(?,?,?,?);";
+	public static final String SQL_UPDATE_SUPPLIER_PRODUCT_FLIGHT_FEEDBACK = "UPDATE ProductOfSupplierInFlightTbl SET Feedback=? WHERE FlightID=? AND SupplierID=? AND ProductID=?;";
+	public static final String SQL_PRODUCTS_REPORT = "SELECT EntertainProductTbl.Name, Count(EntertainProductTbl.ProductID) AS num\n"
+			+ "FROM FlightTbl INNER JOIN (EntertainProductTbl INNER JOIN ProductOfSupplierInFlightTbl ON EntertainProductTbl.ProductID = ProductOfSupplierInFlightTbl.ProductID) ON FlightTbl.FlightID = ProductOfSupplierInFlightTbl.FlightID\n"
+			+ "WHERE [FlightTbl].[DepartureAirport] = ? OR [FlightTbl].[DestinationAirport] = ? AND (((Month([FlightTbl].[DeaprtureDateTime]))=Month(Date()))) OR (((Month([FlightTbl].[DestinationDateTime]))=Month(Date())))\n"
+			+ "GROUP BY EntertainProductTbl.Name;";
+
 }
 
