@@ -9,11 +9,19 @@ public class Order {
 	private Date orderDate;
 	PaymentMethod paymentMethod;
 	
-	public Order(int orderID, Date orderDate, PaymentMethod paymentMethod) {
+	public Order(int orderID, Date orderDate, String paymentMethod) {
 		super();
 		this.orderID = orderID;
 		this.orderDate = orderDate;
-		this.paymentMethod = paymentMethod;
+		if(paymentMethod.equals("BankTransfer")) {
+			this.paymentMethod = PaymentMethod.BankTransfer;
+		}
+		else if(paymentMethod.equals("CreditCard")) {
+			this.paymentMethod = PaymentMethod.CreditCard;
+		}
+		else {
+			this.paymentMethod = PaymentMethod.PayPal;
+		}
 	}
 	public Order(int orderID) {
 		super();

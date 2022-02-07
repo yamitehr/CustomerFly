@@ -22,10 +22,10 @@ public class Main extends Application{
 		
 		try {
 			stg  = primaryStage;
-			Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/boundry/LoginScreen.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Manager-Fly");
+			primaryStage.setTitle("Customer-Fly");
 			primaryStage.setResizable(false);
 			primaryStage.initStyle(StageStyle.DECORATED);
 			primaryStage.show();

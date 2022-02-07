@@ -19,6 +19,7 @@ import entity.Customer;
 import entity.Flight;
 import entity.FlightTicket;
 import entity.Order;
+import javafx.scene.control.Alert;
 import util.Consts;
 import util.FlightStatus;
 import util.MealType;
@@ -26,6 +27,7 @@ import util.SeatClass;
 
 public class FlightsControl {
 	private static FlightsControl _instance;
+	private Alert a;
 //rotem
 	public static FlightsControl getInstance() {
 		if (_instance == null)
@@ -178,6 +180,31 @@ public class FlightsControl {
 		return toReturn;
 	}
 	
+	public HashMap<SeatClass, List<FlightTicket>>getAllTicketsByClassesCheckIn(Flight flight) {
+		HashMap<SeatClass, List<FlightTicket>> toReturn = new HashMap<SeatClass, List<FlightTicket>>();
+		List<FlightTicket> economyTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_ECONOMY_CHECKIN);
+		List<FlightTicket> buisnessTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_BUISNESS_CHECKIN);
+		List<FlightTicket> firstTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_FIRST_CHECKIN);
+		
+		toReturn.put(SeatClass.Economy, economyTickets);
+		toReturn.put(SeatClass.Buisness, buisnessTickets);
+		toReturn.put(SeatClass.FirstClass, firstTickets);
+		
+		return toReturn;
+	}
+	
+	public HashMap<SeatClass, List<FlightTicket>>getAllTicketsByClassesNotCheckIn(Flight flight) {
+		HashMap<SeatClass, List<FlightTicket>> toReturn = new HashMap<SeatClass, List<FlightTicket>>();
+		List<FlightTicket> economyTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_ECONOMY_NOT_CHECKIN);
+		List<FlightTicket> buisnessTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_BUISNESS_NOT_CHECKIN);
+		List<FlightTicket> firstTickets = getTicketsByClass(flight, Consts.SQL_GET_FLIGHT_TICKETS_FIRST_NOT_CHECKIN);
+		
+		toReturn.put(SeatClass.Economy, economyTickets);
+		toReturn.put(SeatClass.Buisness, buisnessTickets);
+		toReturn.put(SeatClass.FirstClass, firstTickets);
+		
+		return toReturn;
+	}
 	private ArrayList<FlightTicket> getTicketsByClass(Flight flight, String query) {
 		ArrayList<FlightTicket> results = new ArrayList<FlightTicket>();
 		try {
@@ -199,7 +226,8 @@ public class FlightsControl {
 							     new Flight(rs.getString(i++)),
 							     new AirplaneSeat(rs.getInt(i++), rs.getString(i++), new Airplane(flight.getAirplane().getTailNumber())),
 							     new Airplane(rs.getString(i++)),
-							     MealType.valueOf(rs.getString(i++)));
+							     MealType.valueOf(rs.getString(i++)),
+							    		 false);
 						results.add(flightTicket);
 					}
 			} catch (SQLException e) {
@@ -303,6 +331,32 @@ public class FlightsControl {
 				e.printStackTrace();
 			}
 			return false;
+		}
+		
+		
+		public ArrayList<AirplaneSeat> getFlightSeat() {
+			ArrayList<AirplaneSeat> results = new ArrayList<AirplaneSeat>();
+			try {
+				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+				try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+						PreparedStatement stmt = conn.prepareStatement(Consts.SQL_SEL_FLIGHTSEATS);
+						ResultSet rs = stmt.executeQuery()) {
+					while (rs.next()) {
+						int i = 1;
+						AirplaneSeat flight = new AirplaneSeat(
+								rs.getInt(i++),
+								rs.getString(i++),
+								rs.getString(4),
+							    new Airplane(rs.getString(3)));
+						results.add(flight);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return results;
 		}
 		//-----UPDATE-----//
 		public boolean updateFlight(Flight flight)

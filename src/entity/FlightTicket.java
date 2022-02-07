@@ -13,9 +13,10 @@ public class FlightTicket {
 	private AirplaneSeat seat;
 	private Airplane airplane;
 	private MealType mealType;
+	private boolean isCanceled;
 	
 	public FlightTicket(Order order, int ticketID, SeatClass seatClass, double price, Customer customer, Flight flight,
-			AirplaneSeat seat, Airplane airplane, MealType mealType) {
+			AirplaneSeat seat, Airplane airplane, MealType mealType,boolean isCanceled) {
 		super();
 		this.order = order;
 		this.ticketID = ticketID;
@@ -26,6 +27,7 @@ public class FlightTicket {
 		this.seat = seat;
 		this.airplane = airplane;
 		this.mealType = mealType;
+		this.isCanceled = isCanceled;
 	}
 	public FlightTicket(Order order, int ticketID) {
 		super();
@@ -90,5 +92,12 @@ public class FlightTicket {
 	public String toString() {
 		return "Ticket number " + ticketID + ", of OrderID " + order.getOrderID() + ", Class " + seatClass + ", customer passport " + customer.getPassportID() + ", flight number" + flight.getFlightID() + ", seat " + seat.getRow() + seat.getSeat();
 	}
+	public boolean isCanceled() {
+		return isCanceled;
+	}
+	public void setCanceled(boolean isCanceled) {
+		this.isCanceled = isCanceled;
+	}
+	
 	
 }

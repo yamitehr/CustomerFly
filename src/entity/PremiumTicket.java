@@ -13,9 +13,9 @@ public class PremiumTicket extends FlightTicket {
 		super(order, ticketID);
 	}
 	public PremiumTicket(Order order, int ticketID, SeatClass seatClass, double price, Customer customer, Flight flight,
-			AirplaneSeat seat, Airplane airplane, MealType mealType, double luggageWeight, String request1,
+			AirplaneSeat seat, Airplane airplane, MealType mealType,boolean isCanceled, double luggageWeight, String request1,
 			String request2, String request3) {
-		super(order, ticketID, seatClass, price, customer, flight, seat, airplane, mealType);
+		super(order, ticketID, seatClass, price, customer, flight, seat, airplane, mealType,isCanceled);
 		this.luggageWeight = luggageWeight;
 		this.request1 = request1;
 		this.request2 = request2;

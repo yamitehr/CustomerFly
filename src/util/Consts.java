@@ -94,8 +94,15 @@ public class Consts {
 	public static final String SQL_GET_FLIGHT_TICKETS_ECONOMY = " { call qryGetEconomyTicketByFlight(?) }";
 	public static final String SQL_GET_FLIGHT_TICKETS_BUISNESS = " { call qryGetBuisnessTicketByFlight(?) }";
 	public static final String SQL_GET_FLIGHT_TICKETS_FIRST = " { call qryGetFirstTicketByFlight(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_ECONOMY_CHECKIN = " { call qryGetEconomyTicketByFlightCheckIn(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_BUISNESS_CHECKIN = " { call qryGetBuisnessTicketByFlightCheckIn(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_FIRST_CHECKIN = " { call qryGetFirstClassTicketByFlightCheckIn(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_ECONOMY_NOT_CHECKIN = " { call qryGetEconomyTicketByFlightNotCheckIn(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_BUISNESS_NOT_CHECKIN = " { call qryGetBuisnessTicketByFlightNotCheckIn(?) }";
+	public static final String SQL_GET_FLIGHT_TICKETS_FIRST_NOT_CHECKIN = " { call qryGetFirstClassTicketByFlightNotCheckIn(?) }";
 	public static final String SQL_CANCEL_TICKET = "{ call qryCancelTicket(?,?) }";
-	
+	public static final String SQL_FLIGHT_TICKETS_BY_FLIGHT_ID = "{ call qryGetTicketsByFlight(?,?) }";
+	public static final String SQL_UPDATE_SEAT_TAKEN = "UPDATE FlightTicketTbl SET RowSeatNumber=?, SeatNumber=? WHERE OrderID=? AND TicketID=?;";
 	
 	//getting all customers
 		public static final String SQL_SEL_ALL_CUSTOMERS = "SELECT CustomerTbl.passportID, CustomerTbl.FirstName, CustomerTbl.LastName, CustomerTbl.Email, CustomerTbl.BirthDate ,CustomerTbl.CitizenShip, CustomerTbl.Password\r\n"
