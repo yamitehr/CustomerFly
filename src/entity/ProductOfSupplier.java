@@ -29,7 +29,7 @@ public class ProductOfSupplier {
 
 	@Override
 	public String toString() {
-		return "ProductOfSupplier [supplierID=" + supplierID + ", productId=" + productId + "]";
+		return "ProductOfSupplier [supplierID=" + supplierID + ", productId=" + productId +"]";
 	}
 	
 	

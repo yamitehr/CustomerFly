@@ -28,12 +28,6 @@ public class HomeScreenAdmin {
 		}
 		
 		@FXML
-		public void customersMove(MouseEvent event) throws Exception
-		{
-			movePage("Customers");
-		}
-		
-		@FXML
 		public void suppliersMove(MouseEvent event) throws Exception
 		{
 			movePage("Suppliers");
@@ -55,6 +49,18 @@ public class HomeScreenAdmin {
 		public void productInFlightMove(MouseEvent event) throws Exception
 		{
 			movePage("AddProductToFlight");
+		}
+		
+		@FXML
+		public void handleFlightsUpdatesMove(MouseEvent event) throws Exception
+		{
+			movePage("FrmImport");
+		}
+		
+		@FXML
+		public void productsInFlightReportMove(MouseEvent event) throws Exception
+		{
+			movePage("ProductsInFlightReport");
 		}
 		
 		

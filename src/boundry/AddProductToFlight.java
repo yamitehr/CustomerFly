@@ -35,7 +35,7 @@ import util.ProductType;
 public class AddProductToFlight {
 	
 	@FXML
-    private Pane feedbackPane;
+    private AnchorPane addProductToFlight;
 	
 	@FXML
     private ComboBox<Flight> flight;
@@ -168,13 +168,13 @@ public class AddProductToFlight {
  		a.show();
 		}
      }
-     /*
-    public void moveToList(ActionEvent event) throws Exception{
-    	Parent newRoot = FXMLLoader.load(getClass().getResource("/boundry/Suppliers.fxml"));
-   		Stage primaryStage = (Stage) homeAdmin.getScene().getWindow();
+     
+    public void moveToHome(ActionEvent event) throws Exception{
+    	Parent newRoot = FXMLLoader.load(getClass().getResource("/boundry/HomeScreenAdmin.fxml"));
+   		Stage primaryStage = (Stage) addProductToFlight.getScene().getWindow();
    		primaryStage.getScene().setRoot(newRoot);
    		primaryStage.show();
     }
-    */
+    
   
 }

@@ -1,6 +1,6 @@
 package control;
 
-import java.sql.CallableStatement;
+import java.sql.CallableStatement; 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -16,12 +16,15 @@ import entity.Airplane;
 import entity.AirplaneSeat;
 import entity.Airport;
 import entity.Customer;
+import entity.EntertainProduct;
 import entity.Flight;
 import entity.FlightTicket;
 import entity.Order;
+import entity.ProductOfSupplier;
 import util.Consts;
 import util.FlightStatus;
 import util.MealType;
+import util.PaymentMethod;
 import util.SeatClass;
 
 public class FlightsControl {
@@ -350,4 +353,89 @@ public class FlightsControl {
 			}
 			return false;
 		}
+		
+		/**
+		 * fetches all airports from DB file.
+		 * @return ArrayList of airports.
+		 */
+		public ArrayList<Airport> getAirports() {
+			ArrayList<Airport> results = new ArrayList<Airport>();
+			try {
+				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+				try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+						PreparedStatement stmt = conn.prepareStatement(Consts.SQL_SEL_AIRPORT);
+						ResultSet rs = stmt.executeQuery()) {
+					while (rs.next()) {
+						int i = 1;
+						
+						results.add(new Airport(rs.getString(i++), rs.getString(i++), rs.getString(i++)));
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return results;
+		}
+		
+		/**
+		 * fetches all orders from DB file.
+		 * @return ArrayList of orders.
+		 */
+		public ArrayList<Order> getOrders() {
+			ArrayList<Order> results = new ArrayList<Order>();
+			try {
+				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+				try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+						PreparedStatement stmt = conn.prepareStatement(Consts.SQL_GET_ALL_ORDERS);
+						ResultSet rs = stmt.executeQuery()) {
+					while (rs.next()) {
+						int i = 1;
+						results.add(new Order(rs.getInt(i++), rs.getDate(i++), PaymentMethod.valueOf(rs.getString(i++))));
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return results;
+		}
+		
+		/**
+		 * fetches all orders from DB file.
+		 * @return ArrayList of orders.
+		 */
+		public ArrayList<FlightTicket> getFlightTickets() {
+			ArrayList<FlightTicket> results = new ArrayList<FlightTicket>();
+			try {
+				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+				try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+						PreparedStatement stmt = conn.prepareStatement(Consts.SQL_GET_ALL_FLIGHT_TICKETS);
+						ResultSet rs = stmt.executeQuery()) {
+					while (rs.next()) {
+						int i = 1;
+						FlightTicket flightTicket = new FlightTicket(new Order(rs.getInt(i++)),rs.getInt(i++),
+								SeatClass.valueOf(rs.getString(i++)),
+								rs.getDouble(i++),
+							     new Customer(rs.getString(i++)),
+							     new Flight(rs.getString(i++)),
+							     new AirplaneSeat(rs.getInt(i++), rs.getString(i++), new Airplane(rs.getString(i++))),
+							     new Airplane(rs.getString(i++)),
+							     MealType.valueOf(rs.getString(i++)));
+						results.add(flightTicket);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return results;
+		}
+		
+		
+		
+		 
 }

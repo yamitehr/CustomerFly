@@ -48,11 +48,13 @@ public class LoginScreen {
 		try {
 			if ((txtUserName.getText().equals("admin") && txtPassword.getText().equals("admin"))){ //check if the details is true
 				movePage("HomeScreenAdmin");
+				return;
 			}
 			
 			if(isCanLogin())
 			{
 				movePage("HomeScreenCustomer");
+				return;
 				
 			}
 			else if(!isCanLogin())

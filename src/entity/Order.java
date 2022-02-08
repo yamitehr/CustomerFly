@@ -37,9 +37,10 @@ public class Order {
 	public void setPaymentMethod(PaymentMethod paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
+	
 	@Override
 	public String toString() {
-		return "Order [orderID=" + orderID + "]";
+		return "Order [orderID=" + orderID + ", orderDate=" + orderDate + ", paymentMethod=" + paymentMethod + "]";
 	}
 	
 }
