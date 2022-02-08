@@ -104,6 +104,10 @@ public class Consts {
 	public static final String SQL_FLIGHT_TICKETS_BY_FLIGHT_ID = "{ call qryGetTicketsByFlight(?,?) }";
 	public static final String SQL_UPDATE_SEAT_TAKEN = "UPDATE FlightTicketTbl SET RowSeatNumber=?, SeatNumber=? WHERE OrderID=? AND TicketID=?;";
 	
+	//getting all flight tickets
+			public static final String SQL_GET_ALL_FLIGHT_TICKETS = "SELECT FlightTicketTbl.OrderID, FlightTicketTbl.TicketID, FlightTicketTbl.Class, FlightTicketTbl.Price, FlightTicketTbl.CustPassportID ,FlightTicketTbl.FlightID, FlightTicketTbl.RowSeatNumber, FlightTicketTbl.SeatNumber, FlightTicketTbl.AirplaneID, FlightTicketTbl.MealType\r\n"
+					+ "FROM FlightTicketTbl ";
+	
 	//getting all customers
 		public static final String SQL_SEL_ALL_CUSTOMERS = "SELECT CustomerTbl.passportID, CustomerTbl.FirstName, CustomerTbl.LastName, CustomerTbl.Email, CustomerTbl.BirthDate ,CustomerTbl.CitizenShip, CustomerTbl.Password\r\n"
 				+ "FROM CustomerTbl ";

@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmImportUpdates">
+<AnchorPane fx:id="importUpdates" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmImportUpdates">
    <children>
-      <Label layoutX="35.0" layoutY="34.0" prefHeight="74.0" prefWidth="546.0" text="Handle Flights Updates" underline="true">
+      <Label layoutX="124.0" layoutY="25.0" prefHeight="74.0" prefWidth="381.0" text="Handle Flights Updates" underline="true">
          <font>
             <Font name="Guttman-Aharoni Bold" size="36.0" />
          </font>
@@ -39,6 +39,11 @@
       <Button fx:id="btnReport" layoutX="315.0" layoutY="108.0" mnemonicParsing="false" onAction="#report" prefHeight="44.0" prefWidth="230.0" text="Orders Report">
          <font>
             <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#moveToHome" prefHeight="25.0" prefWidth="50.0" text="Back">
+         <font>
+            <Font name="System Bold" size="13.0" />
          </font>
       </Button>
    </children>

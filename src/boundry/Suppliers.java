@@ -1,16 +1,22 @@
 package boundry;
 
 import control.ProductSupplierControl;
+import entity.EntertainProduct;
+import entity.Flight;
+import entity.FlightTicket;
 import entity.Order;
 import entity.Supplier;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -34,7 +40,9 @@ public class Suppliers {
     @FXML
     private Button showProducts;
     
- private ProductSupplierControl productSupplierIns = ProductSupplierControl.getInstance();
+    public static Supplier chooseSupplier = null;
+    
+    private ProductSupplierControl productSupplierIns = ProductSupplierControl.getInstance();
     
     @FXML
 	public void initialize() 
@@ -57,4 +65,22 @@ public class Suppliers {
    		primaryStage.getScene().setRoot(newRoot);
    		primaryStage.show();
     }
+    
+    @FXML 
+	public void supplierChoose(MouseEvent arg0) throws Exception{
+    	chooseSupplier = suppliersList.getSelectionModel().getSelectedItem();
+	}
+    
+    @FXML
+	public void moveProductsOfSupplierChoose(ActionEvent event) throws Exception
+	{
+		Parent newRoot = FXMLLoader.load(getClass().getResource("/boundry/ProductsBySupplier.fxml"));
+		Scene scene = new Scene(newRoot);
+		Stage stage = new Stage();
+		stage.setTitle("Products Of Supplier");
+		stage.setScene(scene);
+		stage.show();
+	}
+    
+    
 }

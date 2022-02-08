@@ -13,7 +13,7 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Text>
-      <ListView fx:id="suppliersList" layoutX="27.0" layoutY="139.0" prefHeight="483.0" prefWidth="575.0" />
+      <ListView fx:id="suppliersList" layoutX="27.0" layoutY="139.0" onMouseClicked="#supplierChoose" prefHeight="483.0" prefWidth="575.0" />
       <Button fx:id="removeSupplier" layoutX="534.0" layoutY="640.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Remove">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -29,7 +29,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="showProducts" layoutX="434.0" layoutY="102.0" mnemonicParsing="false" text="Show entertain products">
+      <Button fx:id="showProducts" layoutX="434.0" layoutY="102.0" mnemonicParsing="false" onAction="#moveProductsOfSupplierChoose" text="Show entertain products">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

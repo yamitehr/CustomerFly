@@ -17,12 +17,17 @@ import entity.Flight;
 import entity.FlightTicket;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import util.SeatClass;
 
 public class FrmImportUpdates 
@@ -34,6 +39,9 @@ public class FrmImportUpdates
 	ListView<FlightTicket> affectedTickets;
 	private ArrayList<Flight> flights = new ArrayList<Flight>();
 	private ArrayList<FlightTicket> flightTickets = new ArrayList<FlightTicket>();
+	
+	@FXML
+	AnchorPane importUpdates;
 	
 	@FXML
 	Button importJson;
@@ -106,4 +114,11 @@ public class FrmImportUpdates
 		JFrame frame = reportLogic.makeOrderDetailsReport();
 		frame.setVisible(true);
 	}
+	
+	 public void moveToHome(ActionEvent event) throws Exception{
+	    	Parent newRoot = FXMLLoader.load(getClass().getResource("/boundry/HomeScreenAdmin.fxml"));
+	   		Stage primaryStage = (Stage) importUpdates.getScene().getWindow();
+	   		primaryStage.getScene().setRoot(newRoot);
+	   		primaryStage.show();
+	    }
 }
