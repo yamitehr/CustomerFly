@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="entertainProductsScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.CheckIn">
+   <children>
+      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#moveHomeScreen" text="Back">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="166.0" layoutY="7.0" prefHeight="96.0" prefWidth="298.0" text="Assign Ticket" textAlignment="CENTER" textFill="#2ed2ff">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="88.0" prefHeight="44.0" prefWidth="445.0" text="Please choose an event you want to seat:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="204.0" prefHeight="62.0" prefWidth="539.0" text="Here are the tickets to assign and other information:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="6.0" layoutX="-21.0" layoutY="191.0" stroke="BLACK" strokeType="INSIDE" width="653.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <ComboBox fx:id="flights" layoutX="126.0" layoutY="149.0" onAction="#currentFlight" prefHeight="26.0" prefWidth="358.0" />
+      <TabPane layoutX="6.0" layoutY="266.0" prefHeight="220.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Economy">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="economyList" layoutX="11.0" layoutY="6.0" prefHeight="178.0" prefWidth="596.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Buisness">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="buisnessList" layoutX="11.0" layoutY="6.0" prefHeight="178.0" prefWidth="596.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="First Class">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="firstList" layoutX="11.0" layoutY="6.0" prefHeight="178.0" prefWidth="596.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Orders">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Relatives">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Button fx:id="seatTheCustomer" layoutX="166.0" layoutY="612.0" mnemonicParsing="false" onAction="#seatTheCustomer" prefHeight="44.0" prefWidth="220.0" text="Seat the customer">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label layoutX="176.0" layoutY="477.0" prefHeight="55.0" prefWidth="230.0" text="Select available seat:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="availableSeats" layoutX="136.0" layoutY="547.0" prefHeight="26.0" prefWidth="279.0" />
+   </children>
+</AnchorPane>
