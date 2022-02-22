@@ -105,8 +105,7 @@ public class Consts {
 	public static final String SQL_UPDATE_SEAT_TAKEN = "UPDATE FlightTicketTbl SET RowSeatNumber=?, SeatNumber=? WHERE OrderID=? AND TicketID=?;";
 	
 	//getting all flight tickets
-			public static final String SQL_GET_ALL_FLIGHT_TICKETS = "SELECT FlightTicketTbl.OrderID, FlightTicketTbl.TicketID, FlightTicketTbl.Class, FlightTicketTbl.Price, FlightTicketTbl.CustPassportID ,FlightTicketTbl.FlightID, FlightTicketTbl.RowSeatNumber, FlightTicketTbl.SeatNumber, FlightTicketTbl.AirplaneID, FlightTicketTbl.MealType\r\n"
-					+ "FROM FlightTicketTbl ";
+			public static final String SQL_GET_ALL_FLIGHT_TICKETS = "SELECT * FROM FlightTicketTbl;";
 	
 	//getting all customers
 		public static final String SQL_SEL_ALL_CUSTOMERS = "SELECT CustomerTbl.passportID, CustomerTbl.FirstName, CustomerTbl.LastName, CustomerTbl.Email, CustomerTbl.BirthDate ,CustomerTbl.CitizenShip, CustomerTbl.Password\r\n"
@@ -121,6 +120,7 @@ public class Consts {
 	public static final String SQL_GET_ALL_CUSTOMERS = "SELECT * FROM CustomerTbl;";
 	public static final String SQL_INSERT_CUSTOMERS = "INSERT INTO CustomerTbl VALUES(?,?,?,?,?,?);";
 	public static final String SQL_GET_ALL_ORDERS = "SELECT * FROM OrderTbl;";
+	public static final String SQL_GET_MAX_ORDER_ID = "SELECT MAX(OrderID) FROM OrderTbl;";
 	public static final String SQL_INSERT_ORDER = "INSERT INTO OrderTbl VALUES(?,?,?);";
 	public static final String SQL_GET_FLIGHT = "SELECT * FROM FlightTbl WHERE FlightID=?;";
 	public static final String SQL_ADD_TICKET = "INSERT INTO FlightTicketTbl VALUES(?,?,?,?,?,?,?,?,?,?,?);";
@@ -140,6 +140,16 @@ public class Consts {
 			+ "FROM FlightTbl INNER JOIN (EntertainProductTbl INNER JOIN ProductOfSupplierInFlightTbl ON EntertainProductTbl.ProductID = ProductOfSupplierInFlightTbl.ProductID) ON FlightTbl.FlightID = ProductOfSupplierInFlightTbl.FlightID\n"
 			+ "WHERE [FlightTbl].[DepartureAirport] = ? OR [FlightTbl].[DestinationAirport] = ? AND (((Month([FlightTbl].[DeaprtureDateTime]))=Month(Date()))) OR (((Month([FlightTbl].[DestinationDateTime]))=Month(Date())))\n"
 			+ "GROUP BY EntertainProductTbl.Name;";
+	
+	public static final String SQL_UPDA_SUPPLIER = "UPDATE SupplierTbl SET Name=?, PhoneNumber=?, Email=?, Fax=?"
+			+ " WHERE SupplierID=?;";
+	
+	public static final String SQL_UPDA_PRODUCT = "UPDATE EntertainProductTbl SET Name=?, Description=?, Type=?"
+			+ " WHERE ProductID=?;";
+	
+	public static final String SQL_DELETE_SUPPLIER = "DELETE * FROM SupplierTbl WHERE SupplierTbl.SupplierID = ?;";
+	
+	public static final String SQL_GET_COUNTRIES_CITIES = "SELECT AirportTbl.Country, AirportTbl.City FROM AirportTbl WHERE AirportCode=?;";
 
 }
 

@@ -10,28 +10,28 @@
    <children>
       <Text fill="#53bdff" layoutX="97.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entertain products List">
          <font>
-            <Font name="System Bold" size="41.0" />
+            <Font name="Arial Rounded MT Bold" size="42.0" />
          </font>
       </Text>
-      <ListView fx:id="productsList" layoutX="27.0" layoutY="139.0" prefHeight="483.0" prefWidth="575.0" />
-      <Button fx:id="removeProduct" layoutX="534.0" layoutY="640.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Remove">
+      <ListView fx:id="productsList" layoutX="27.0" layoutY="139.0" onMouseClicked="#productChoose" prefHeight="483.0" prefWidth="575.0" />
+      <Button fx:id="removeProduct" layoutX="518.0" layoutY="638.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="Remove">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="editProduct" layoutX="479.0" layoutY="640.0" mnemonicParsing="false" text="Edit">
+      <Button fx:id="editProduct" layoutX="463.0" layoutY="638.0" mnemonicParsing="false" onAction="#editProductChoose" text="Edit">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="newProduct" layoutX="408.0" layoutY="640.0" mnemonicParsing="false" onAction="#addNewProduct" prefHeight="27.0" prefWidth="59.0" text="New">
+      <Button fx:id="newProduct" layoutX="392.0" layoutY="638.0" mnemonicParsing="false" onAction="#addNewProduct" prefHeight="27.0" prefWidth="59.0" text="New">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
       <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#moveHomeScreen" text="Back">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
    </children>

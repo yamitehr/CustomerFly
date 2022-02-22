@@ -10,18 +10,23 @@
    <children>
       <Text fill="#42d9ff" layoutX="109.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products In Flight:">
          <font>
-            <Font name="System Bold" size="48.0" />
+            <Font name="Arial Rounded MT Bold" size="49.0" />
          </font>
       </Text>
-      <Text layoutX="258.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose city:" wrappingWidth="113.47002410888672">
+      <Text layoutX="249.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose city:" wrappingWidth="139.47002410888672">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Text>
       <ComboBox fx:id="citiesList" layoutX="240.0" layoutY="232.0" prefWidth="150.0" promptText="select" />
       <Button layoutX="209.0" layoutY="400.0" mnemonicParsing="false" onAction="#callProductsInFlightsReport" prefHeight="70.0" prefWidth="219.0" text="Generate">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="Arial Rounded MT Bold" size="29.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#moveHomeScreen" prefHeight="25.0" prefWidth="56.0" text="Back">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </Button>
    </children>

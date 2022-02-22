@@ -14,37 +14,37 @@
    <children>
       <Text fill="#3ed1f6" layoutX="186.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registeration:">
          <font>
-            <Font name="System Bold" size="41.0" />
+            <Font name="Arial Rounded MT Bold" size="43.0" />
          </font>
       </Text>
-      <Text layoutX="102.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport Num:" wrappingWidth="135.326171875">
+      <Text layoutX="99.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport Num:" wrappingWidth="174.66666666666652">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="102.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="104.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="109.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="135.326171875">
+      <Text layoutX="104.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="108.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary citizenship:" wrappingWidth="174.6595001220703">
+      <Text layoutX="102.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary citizenship:" wrappingWidth="213.32618713378906">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="104.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="passportNum" layoutX="238.0" layoutY="155.0" />
@@ -55,24 +55,24 @@
       <DatePicker fx:id="dateOfBirth" layoutX="232.0" layoutY="350.0" />
       <Text layoutX="108.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="100.65948486328125">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <PasswordField fx:id="password" focusTraversable="false" layoutX="209.0" layoutY="525.0" />
+      <PasswordField fx:id="password" focusTraversable="false" layoutX="217.0" layoutY="525.0" />
       <ProgressBar fx:id="progressBar" layoutX="373.0" layoutY="529.0" prefWidth="200.0" progress="0.0" />
       <Label fx:id="alertFill" alignment="CENTER" layoutX="116.0" layoutY="80.0" prefHeight="47.0" prefWidth="367.0" textFill="#e93535">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="register" layoutX="531.0" layoutY="636.0" mnemonicParsing="false" onAction="#saveNewAccount" text="Register">
+      <Button fx:id="register" layoutX="522.0" layoutY="638.0" mnemonicParsing="false" onAction="#saveNewAccount" text="Register">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButton" text="Back">
+      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#backButton" text="Back">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
    </children>

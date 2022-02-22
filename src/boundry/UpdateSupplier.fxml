@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="addSupplier" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.AddSupplier">
+<AnchorPane fx:id="updateSupplier" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.UpdateSupplier">
    <children>
-      <Text fill="#53bdff" layoutX="180.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Supplier:">
+      <Text fill="#53bdff" layoutX="153.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Supplier:">
          <font>
             <Font name="Arial Rounded MT Bold" size="43.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="saveSupplier" layoutX="564.0" layoutY="646.0" mnemonicParsing="false" onAction="#addSupplier" prefHeight="25.0" prefWidth="53.0" text="Save">
+      <Button fx:id="saveSupplier" layoutX="564.0" layoutY="646.0" mnemonicParsing="false" onAction="#saveDetailsChanges" prefHeight="25.0" prefWidth="53.0" text="Save">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
@@ -34,7 +34,7 @@
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="99.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fax:" wrappingWidth="135.326171875">
+      <Text layoutX="97.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fax:" wrappingWidth="135.326171875">
          <font>
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
@@ -45,7 +45,7 @@
       <TextField fx:id="fax" layoutX="216.0" layoutY="356.0" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#moveToList" text="Back to list">
          <font>
-            <Font name="Arial Rounded MT Bold" size="14.0" />
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
       <Text layoutX="96.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" wrappingWidth="135.326171875">

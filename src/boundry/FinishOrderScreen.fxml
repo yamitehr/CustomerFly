@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="orderDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FinishOrderScreen">
+   <children>
+      <Text fill="#4dc6ff" layoutX="170.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="42.0" />
+         </font>
+      </Text>
+      <Text layoutX="456.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer details:" underline="true" wrappingWidth="167.33333333333326">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="26.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport number :" wrappingWidth="185.99276733398438">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="passportNum" layoutX="33.0" layoutY="136.0" />
+      <Text layoutX="20.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight details :" underline="true" wrappingWidth="157.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="19.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight number :" wrappingWidth="139.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="19.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deaprture date/time :" wrappingWidth="199.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="19.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination date/time :" wrappingWidth="199.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="19.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure airport :" wrappingWidth="199.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="19.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination airport :" wrappingWidth="199.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="flightNum" layoutX="228.0" layoutY="299.0" />
+      <TextField fx:id="departureTime" layoutX="228.0" layoutY="338.0" />
+      <TextField fx:id="departureAirport" layoutX="228.0" layoutY="413.0" prefHeight="25.0" prefWidth="381.0" />
+      <TextField fx:id="destinationTime" layoutX="228.0" layoutY="378.0" />
+      <TextField fx:id="destinationAirport" layoutX="228.0" layoutY="446.0" prefHeight="25.0" prefWidth="381.0" />
+      <Text fx:id="totalPriceText" layoutX="414.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="106.00002034505201">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToFightTicketPremium" prefHeight="27.0" prefWidth="59.0" text="Back">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="save" layoutX="557.0" layoutY="649.0" mnemonicParsing="false" onAction="#saveOrderAndFlightTicket" prefHeight="25.0" prefWidth="59.0" text="Save">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <Text layoutX="20.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment:" wrappingWidth="135.326171875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="payment" layoutX="119.0" layoutY="599.0" prefWidth="150.0" promptText="select" />
+      <ListView fx:id="customersList" layoutX="449.0" layoutY="136.0" prefHeight="153.0" prefWidth="167.0" />
+      <Button layoutX="326.0" layoutY="225.0" mnemonicParsing="false" onAction="#addCustomerToList" text="Add To list &gt;&gt;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="passportNum1" layoutX="204.0" layoutY="136.0" />
+      <TextField fx:id="passportNum2" layoutX="33.0" layoutY="174.0" />
+      <TextField fx:id="passportNum3" layoutX="204.0" layoutY="174.0" />
+      <ListView fx:id="productsInFlight" layoutX="280.0" layoutY="498.0" prefHeight="103.0" prefWidth="338.0" />
+      <Text layoutX="21.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entertain products in flight:" underline="true" wrappingWidth="313.9927978515625">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="confirmation" layoutX="33.0" layoutY="635.0" mnemonicParsing="false" onAction="#showPrice" text="I confirm the details">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </CheckBox>
+      <TextField fx:id="totalPrice" layoutX="408.0" layoutY="637.0" prefHeight="25.0" prefWidth="119.0" visible="false" />
+   </children>
+</AnchorPane>

@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.CheckIn">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.CheckIn">
    <effect>
       <Blend />
    </effect>
@@ -23,20 +23,23 @@
       <Cursor fx:constant="DEFAULT" />
    </cursor>
    <children>
-      <Label layoutX="267.0" prefHeight="96.0" prefWidth="298.0" text="Assign Ticket" textAlignment="CENTER">
+      <Label layoutX="267.0" prefHeight="96.0" prefWidth="298.0" text="Assign Ticket" textAlignment="CENTER" textFill="#2ed2ff">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="36.0" />
+            <Font name="Arial Rounded MT Bold" size="37.0" />
          </font>
       </Label>
-      <Button fx:id="home" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" text="Back To Home Page" />
-      <Label layoutX="162.0" layoutY="84.0" prefHeight="44.0" prefWidth="413.0" text="Please choose an event you want to seat:">
+      <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="146.0" text="Back To Home Page">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="162.0" layoutY="84.0" prefHeight="44.0" prefWidth="445.0" text="Please choose an event you want to seat:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="154.0" layoutY="227.0" prefHeight="62.0" prefWidth="510.0" text="Here are the tickets to assign and other information:">
+      <Label layoutX="131.0" layoutY="228.0" prefHeight="62.0" prefWidth="539.0" text="Here are the tickets to assign and other information:">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="5.0" layoutY="216.0" stroke="BLACK" strokeType="INSIDE" width="819.0">
@@ -49,17 +52,17 @@
             </RadialGradient>
          </fill>
       </Rectangle>
-      <Button fx:id="seatTheCustomer" layoutX="257.0" layoutY="711.0" mnemonicParsing="false" onAction="#seatTheCustomer" prefHeight="44.0" prefWidth="191.0" text="Seat the customer">
+      <Button fx:id="seatTheCustomer" layoutX="281.0" layoutY="715.0" mnemonicParsing="false" onAction="#seatTheCustomer" prefHeight="44.0" prefWidth="220.0" text="Seat the customer">
          <font>
-            <Font size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Label layoutX="274.0" layoutY="510.0" prefHeight="62.0" prefWidth="357.0" text="Available Seats:">
+      <Label layoutX="291.0" layoutY="510.0" prefHeight="62.0" prefWidth="357.0" text="Available Seats:">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="214.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
@@ -103,6 +106,6 @@
         </tabs>
       </TabPane>
       <ComboBox fx:id="flights" layoutX="174.0" layoutY="152.0" onAction="#currentFlight" prefHeight="26.0" prefWidth="358.0" />
-      <ComboBox fx:id="availableSeats" layoutX="209.0" layoutY="583.0" prefHeight="26.0" prefWidth="266.0" />
+      <ComboBox fx:id="availableSeats" layoutX="252.0" layoutY="582.0" prefHeight="26.0" prefWidth="266.0" />
    </children>
 </AnchorPane>

@@ -9,7 +9,7 @@
    <children>
       <Text fx:id="title" layoutX="79.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="442.0">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Text>
       <ListView fx:id="ticketsList" layoutX="31.0" layoutY="100.0" prefHeight="200.0" prefWidth="537.0" />

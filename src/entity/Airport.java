@@ -17,6 +17,9 @@ public class Airport {
 		super();
 		this.airportCode = airportCode;
 	}
+	
+	
+	
 	public String getAirportCode() {
 		return airportCode;
 	}
