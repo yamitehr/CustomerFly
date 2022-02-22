@@ -25,17 +25,17 @@
             <Font name="Arial Rounded MT Bold" size="37.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="88.0" prefHeight="44.0" prefWidth="445.0" text="Please choose an event you want to seat:">
+      <Label layoutX="167.0" layoutY="92.0" prefHeight="44.0" prefWidth="268.0" text="Please choose a flight:">
          <font>
             <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="204.0" prefHeight="62.0" prefWidth="539.0" text="Here are the tickets to assign and other information:">
+      <Label layoutX="126.0" layoutY="197.0" prefHeight="62.0" prefWidth="349.0" text="Here are the tickets to assign:">
          <font>
             <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="6.0" layoutX="-21.0" layoutY="191.0" stroke="BLACK" strokeType="INSIDE" width="653.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="4.0" layoutX="-21.0" layoutY="191.0" stroke="BLACK" strokeType="INSIDE" width="653.0">
          <fill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -45,7 +45,7 @@
             </RadialGradient>
          </fill>
       </Rectangle>
-      <ComboBox fx:id="flights" layoutX="126.0" layoutY="149.0" onAction="#currentFlight" prefHeight="26.0" prefWidth="358.0" />
+      <ComboBox fx:id="flights" layoutX="136.0" layoutY="143.0" onAction="#currentFlight" prefHeight="26.0" prefWidth="298.0" />
       <TabPane layoutX="6.0" layoutY="266.0" prefHeight="220.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab text="Economy">
@@ -75,19 +75,9 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Orders">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab text="Relatives">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
          </tabs>
       </TabPane>
-      <Button fx:id="seatTheCustomer" layoutX="166.0" layoutY="612.0" mnemonicParsing="false" onAction="#seatTheCustomer" prefHeight="44.0" prefWidth="220.0" text="Seat the customer">
+      <Button fx:id="seatTheCustomer" layoutX="176.0" layoutY="613.0" mnemonicParsing="false" onAction="#seatTheCustomer" prefHeight="44.0" prefWidth="220.0" text="Seat the customer">
          <font>
             <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
@@ -95,11 +85,11 @@
             <DropShadow />
          </effect>
       </Button>
-      <Label layoutX="176.0" layoutY="477.0" prefHeight="55.0" prefWidth="230.0" text="Select available seat:">
+      <Label layoutX="186.0" layoutY="477.0" prefHeight="55.0" prefWidth="230.0" text="Select available seat:">
          <font>
             <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox fx:id="availableSeats" layoutX="136.0" layoutY="547.0" prefHeight="26.0" prefWidth="279.0" />
+      <ComboBox fx:id="availableSeats" layoutX="146.0" layoutY="547.0" prefHeight="26.0" prefWidth="279.0" />
    </children>
 </AnchorPane>
