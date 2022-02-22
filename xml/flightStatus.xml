@@ -1,0 +1,27 @@
+<?xml version= "1.0"?>
+<flight_status>
+	<flight Id = "2A1D">
+		<status>DELAYED</status>
+	</flight>
+	<flight Id = "3896B5">
+		<status>ON-TIME</status>
+	</flight>
+	<flight Id = "456">
+		<status>ON-TIME</status>
+	</flight>
+	<flight Id = "5325F">
+		<status>CANCELD</status>
+	</flight>
+	<flight Id = "537382">
+		<status>DELAYED</status>
+	</flight>
+	<flight Id = "61551">
+		<status>ON-TIME</status>
+	</flight>
+	<flight Id = "A2145">
+		<status>ON-TIME</status>
+	</flight>
+	<flight Id = "Fg63847">
+		<status>CANCELD</status>
+	</flight>
+</flight_status>
