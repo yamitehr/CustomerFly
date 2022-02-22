@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="premiumTicket" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.BuyPrimumeTicketFlight">
+   <children>
+      <Text fill="#53bdff" layoutX="77.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update your ticket flight">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="42.0" />
+         </font>
+      </Text>
+      <Text layoutX="139.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Want to update your ticket to premium?" wrappingWidth="365.33333333333326">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="207.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What is premiume ticket ?" wrappingWidth="228.13661193847656">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="readMoreBtn" layoutX="259.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#CallreadMoreICn" prefHeight="23.0" prefWidth="109.0" styleClass="btn" text="Read More" textFill="#1ab3e6">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#backToFightTicket" prefHeight="25.0" prefWidth="59.0" text="Back">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <Text fx:id="fill" layoutX="212.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="203.46995544433594">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="one" layoutX="103.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="20.13665771484375">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="request1" layoutX="132.0" layoutY="453.0" prefHeight="25.0" prefWidth="365.0" visible="false" />
+      <Text fx:id="two" layoutX="103.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="20.13665771484375">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="request2" layoutX="132.0" layoutY="496.0" prefHeight="25.0" prefWidth="365.0" visible="false" />
+      <Text fx:id="three" layoutX="103.0" layoutY="563.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="20.13665771484375">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="request3" layoutX="132.0" layoutY="544.0" prefHeight="25.0" prefWidth="365.0" visible="false" />
+      <Button layoutX="564.0" layoutY="647.0" mnemonicParsing="false" onAction="#moveToOrderDetails" prefHeight="25.0" prefWidth="49.0" text="Next">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <CheckBox fx:id="updatePremium" layoutX="130.0" layoutY="306.0" mnemonicParsing="false" onAction="#showDetails" text="I want update my ticket to premium ticket">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <Text fx:id="weight" layoutX="103.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="179.33334859212232">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="maxWeight" layoutX="290.0" layoutY="599.0" prefHeight="25.0" prefWidth="49.0" visible="false" />
+   </children>
+</AnchorPane>

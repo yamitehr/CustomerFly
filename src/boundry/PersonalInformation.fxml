@@ -8,42 +8,41 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="personalInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.PersonalInformation">
    <children>
       <Text fill="#53bdff" layoutX="111.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
          <font>
-            <Font name="System Bold" size="41.0" />
+            <Font name="Arial Rounded MT Bold" size="42.0" />
          </font>
       </Text>
-      <Text layoutX="145.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport Num:" wrappingWidth="135.326171875">
+      <Text layoutX="140.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport Num:" wrappingWidth="149.33333333333326">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="145.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="147.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="152.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="135.326171875">
+      <Text layoutX="147.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="151.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary citizenship:" wrappingWidth="174.6595001220703">
+      <Text layoutX="147.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary citizenship:" wrappingWidth="210.6595001220703">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="147.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth:" wrappingWidth="135.326171875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="passportNum" layoutX="281.0" layoutY="145.0" />
@@ -54,18 +53,18 @@
       <DatePicker fx:id="dateOfBirth" layoutX="275.0" layoutY="340.0" />
       <Text layoutX="151.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="100.65948486328125">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
       <PasswordField fx:id="password" focusTraversable="false" layoutX="252.0" layoutY="515.0" />
       <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#backCustomerHomeScreen" prefHeight="27.0" prefWidth="55.0" text="Back">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
       <Button layoutX="555.0" layoutY="646.0" mnemonicParsing="false" onAction="#saveDetailsChanges" prefHeight="27.0" prefWidth="55.0" text="Save">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
    </children>

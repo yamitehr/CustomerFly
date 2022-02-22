@@ -38,5 +38,11 @@ public class HomeScreenCustomer {
 	{
 		movePage("LoginScreen");
 	}
+	
+	@FXML
+	public void newOrderAndFlightTicket(MouseEvent event) throws Exception
+	{
+		movePage("BuyFlightTicket");
+	}
 
 }

@@ -24,6 +24,7 @@ import entity.Order;
 import javafx.scene.control.Alert;
 
 import entity.ProductOfSupplier;
+import entity.ProductOfSupplierInFlight;
 import util.Consts;
 import util.FlightStatus;
 import util.MealType;
@@ -54,9 +55,9 @@ public class FlightsControl {
 				while (rs.next()) {
 					int i = 1;
 					Flight flight = new Flight(rs.getString(i++),
-							new Airport(rs.getString(i++)),
+							getAirportByAirportID(rs.getString(i++)),
 							rs.getTimestamp(i++),
-						     new Airport(rs.getString(i++)),
+							getAirportByAirportID(rs.getString(i++)),
 						     rs.getTimestamp(i++),
 						     FlightStatus.valueOf(rs.getString(i++)),
 						     new Airplane(rs.getString(i++)));
@@ -147,7 +148,7 @@ public class FlightsControl {
 		return seatsCounts;
 	}
 	
-	private int getNumOfSeatsByClass(Airplane airplane, String query) {
+	public int getNumOfSeatsByClass(Airplane airplane, String query) {
 		int count = 0;
 		try {
 			Class.forName(Consts.JDBC_STR);
@@ -472,15 +473,15 @@ public class FlightsControl {
 						ResultSet rs = stmt.executeQuery()) {
 					while (rs.next()) {
 						int i = 1;
-						FlightTicket flightTicket = new FlightTicket(new Order(rs.getInt(i++)),rs.getInt(i++),
+						FlightTicket flightTicket = new FlightTicket(new Order(rs.getInt(i++)),
+								rs.getInt(i++),
 								SeatClass.valueOf(rs.getString(i++)),
 								rs.getDouble(i++),
 							     new Customer(rs.getString(i++)),
 							     new Flight(rs.getString(i++)),
-							     new AirplaneSeat(rs.getInt(i++), rs.getString(i++), new Airplane(rs.getString(i++))),
+							     new AirplaneSeat(rs.getInt(i++), rs.getString(i++), new Airplane(rs.getString(i))),
 							     new Airplane(rs.getString(i++)),
-							     MealType.valueOf(rs.getString(i++)),
-							     false);
+							     MealType.valueOf(rs.getString(i++)),false);
 						results.add(flightTicket);
 					}
 				} catch (SQLException e) {
@@ -490,6 +491,27 @@ public class FlightsControl {
 				e.printStackTrace();
 			}
 			return results;
+		}
+		
+		public Airport getAirportByAirportID(String airportId) {
+			try {
+				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+				try {
+					Connection conn = DriverManager.getConnection(Consts.CONN_STR);
+					PreparedStatement stmt = conn.prepareStatement(Consts.SQL_GET_COUNTRIES_CITIES);
+					stmt.setString(1, airportId);
+					ResultSet rs = stmt.executeQuery();
+					if (rs.next()) {
+						Airport airport = new Airport(airportId, rs.getString(1), rs.getString(2));
+						return airport;
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return null;
 		}
 		
 		

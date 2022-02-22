@@ -8,24 +8,24 @@
 
 <AnchorPane fx:id="importUpdates" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmImportUpdates">
    <children>
-      <Label layoutX="124.0" layoutY="25.0" prefHeight="74.0" prefWidth="381.0" text="Handle Flights Updates" underline="true">
+      <Label layoutX="106.0" layoutY="28.0" prefHeight="74.0" prefWidth="417.0" text="Handle Flights Updates" textFill="#1fd7f4" underline="true">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="36.0" />
+            <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="btnSend" layoutX="35.0" layoutY="108.0" mnemonicParsing="false" onAction="#importFlights" prefHeight="44.0" prefWidth="230.0" text="Click Here To Import JSON">
+      <Button fx:id="btnSend" layoutX="35.0" layoutY="108.0" mnemonicParsing="false" onAction="#importFlights" prefHeight="44.0" prefWidth="239.0" text="Click Here To Import JSON">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
       <Button fx:id="notifyButton" layoutX="35.0" layoutY="531.0" mnemonicParsing="false" onAction="#notify" prefHeight="38.0" prefWidth="290.0" text="Cancel Ticket &amp; Notify customer">
          <font>
-            <Font name="System Bold Italic" size="16.0" />
+            <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>
       </Button>
       <Label layoutX="18.0" layoutY="152.0" prefHeight="62.0" prefWidth="594.0" text="Affected Flights:">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
       <Label fx:id="messageLbl" layoutX="135.0" layoutY="595.0" prefHeight="62.0" prefWidth="424.0" />
@@ -33,7 +33,7 @@
       <ListView fx:id="affectedTickets" layoutX="35.0" layoutY="385.0" prefHeight="130.0" prefWidth="536.0" />
       <Label layoutX="18.0" layoutY="328.0" prefHeight="62.0" prefWidth="594.0" text="Affected Flights Tickets:">
          <font>
-            <Font name="Guttman-Aharoni Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Label>
       <Button fx:id="btnReport" layoutX="315.0" layoutY="108.0" mnemonicParsing="false" onAction="#report" prefHeight="44.0" prefWidth="230.0" text="Orders Report">
@@ -41,9 +41,9 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#moveToHome" prefHeight="25.0" prefWidth="50.0" text="Back">
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#moveToHome" prefHeight="30.0" prefWidth="66.0" text="Back">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
    </children>

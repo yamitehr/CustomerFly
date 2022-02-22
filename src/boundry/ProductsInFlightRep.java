@@ -10,9 +10,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class ProductsInFlightRep {
 	
@@ -47,6 +50,14 @@ public class ProductsInFlightRep {
     		RefineryUtilities.centerFrameOnScreen( demo );    
     		demo.setVisible( true );
 	    }
+	    
+	    public void moveHomeScreen(ActionEvent event) throws Exception
+		{
+			Parent newRoot = FXMLLoader.load(getClass().getResource("/boundry/HomeScreenAdmin.fxml"));
+			Stage primaryStage = (Stage) productsInFlightReport.getScene().getWindow();
+			primaryStage.getScene().setRoot(newRoot);
+			primaryStage.show();
+		}
 
 	
 	 

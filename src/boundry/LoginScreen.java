@@ -59,7 +59,7 @@ public class LoginScreen {
 			}
 			else if(!isCanLogin())
 			{
-				Alert alert = new Alert(AlertType.ERROR,"One or More Fields are incoorect");
+				Alert alert = new Alert(AlertType.ERROR,"One or More Fields are incorect");
 				alert.setHeaderText("Login Error");
 				alert.setTitle("Login Error");
 				alert.showAndWait();

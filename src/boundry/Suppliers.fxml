@@ -8,35 +8,35 @@
 
 <AnchorPane fx:id="suppliersScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.Suppliers">
    <children>
-      <Text fill="#53bdff" layoutX="187.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers List">
+      <Text fill="#53bdff" layoutX="172.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers List">
          <font>
-            <Font name="System Bold" size="41.0" />
+            <Font name="Arial Rounded MT Bold" size="43.0" />
          </font>
       </Text>
       <ListView fx:id="suppliersList" layoutX="27.0" layoutY="139.0" onMouseClicked="#supplierChoose" prefHeight="483.0" prefWidth="575.0" />
-      <Button fx:id="removeSupplier" layoutX="534.0" layoutY="640.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Remove">
+      <Button fx:id="removeSupplier" layoutX="515.0" layoutY="637.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="Remove">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="editSupplier" layoutX="479.0" layoutY="640.0" mnemonicParsing="false" text="Edit">
+      <Button fx:id="editSupplier" layoutX="460.0" layoutY="637.0" mnemonicParsing="false" onAction="#editSupplierChoose" text="Edit">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="newSupplier" layoutX="408.0" layoutY="640.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="27.0" prefWidth="59.0" text="New">
+      <Button fx:id="newSupplier" layoutX="389.0" layoutY="637.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="27.0" prefWidth="59.0" text="New">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="showProducts" layoutX="434.0" layoutY="102.0" mnemonicParsing="false" onAction="#moveProductsOfSupplierChoose" text="Show entertain products">
+      <Button fx:id="showProducts" layoutX="415.0" layoutY="103.0" mnemonicParsing="false" onAction="#moveProductsOfSupplierChoose" text="Show entertain products">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#moveHomeScreen" text="Back">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
    </children>

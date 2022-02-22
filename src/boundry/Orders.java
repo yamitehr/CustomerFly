@@ -25,14 +25,6 @@ public class Orders {
 	@FXML
     private ListView<Order> ordersList;
 	
-	@FXML
-    private Button newOrder;
-	
-	@FXML
-    private Button removeOrder;
-    
-    @FXML
-    private Button editOrder;
     
     @FXML
     private Button showFlightTickets;

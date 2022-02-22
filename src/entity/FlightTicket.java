@@ -29,6 +29,34 @@ public class FlightTicket {
 		this.mealType = mealType;
 		this.isCanceled = isCanceled;
 	}
+	
+	
+	
+	public FlightTicket(Order order, int ticketID, double price,Customer customer) {
+		super();
+		this.order = order;
+		this.ticketID = ticketID;
+		this.price = price;
+		this.customer = customer;
+	}
+
+
+
+	public FlightTicket(Order order, int ticketID, SeatClass seatClass, double price, Customer customer, Flight flight,
+			AirplaneSeat seat, Airplane airplane, MealType mealType) {
+		super();
+		this.order = order;
+		this.ticketID = ticketID;
+		this.seatClass = seatClass;
+		this.price = price;
+		this.customer = customer;
+		this.flight = flight;
+		this.seat = seat;
+		this.airplane = airplane;
+		this.mealType = mealType;
+	}
+
+
 	public FlightTicket(Order order, int ticketID) {
 		super();
 		this.order = order;

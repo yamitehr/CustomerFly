@@ -29,17 +29,17 @@
       </ImageView>
       <Button fx:id="login" layoutX="264.0" layoutY="553.0" mnemonicParsing="false" onAction="#Login" prefHeight="28.0" prefWidth="67.0" text="Login" textFill="#57d4eb">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
       <Label layoutX="101.0" layoutY="617.0" prefHeight="28.0" prefWidth="166.0" text="Don't have an account?">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Label>
       <Button fx:id="newAccount" layoutX="264.0" layoutY="617.0" mnemonicParsing="false" onAction="#newAccount" prefHeight="25.0" prefWidth="232.0" text="Create New Account" textFill="#57d4eb">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
       <ImageView fitHeight="293.0" fitWidth="312.0" layoutX="169.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
