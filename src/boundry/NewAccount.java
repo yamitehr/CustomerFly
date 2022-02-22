@@ -76,6 +76,7 @@ public class NewAccount {
 			alertFill.setText("You must fill in all the fields");
 			return;
 		}
+		/*
 		if(LoginControl.getInstance().checkPassportNum(LoginControl.getInstance().getAllCustumers().get(passportNum.getText())))
 		{
 			Alert alert = new Alert(AlertType.ERROR,"Please try another passport number");
@@ -84,18 +85,24 @@ public class NewAccount {
 			alert.showAndWait();
 			movePage("LoginScreen");
 			return;
-		}
+		}*/
 		Date date = Date.valueOf(dateOfBirth.getValue());
 		Customer c = new Customer(passportNum.getText(), firstName.getText(), lastName.getText(), email.getText(),date ,primaryCitizenship.getText(), password.getText());
 		user = passportNum.getText();
 		LoginControl.getInstance().getAllCustumers().put(user, c);
 		//adding the customer to DB//
-		LoginControl.getInstance().addNewCutsomerToDB(c);
-		Alert alert = new Alert(AlertType.INFORMATION,"Your user name will be your passport ID");
-		alert.setHeaderText("You are Succseed to Register");
-		alert.setTitle("Register Sucssed");
-		alert.showAndWait();
-		movePage("LoginScreen"); //moving back to login
+		if(LoginControl.getInstance().addNewCutsomerToDB(c)) {
+			Alert alert = new Alert(AlertType.INFORMATION,"Your user name will be your passport ID");
+			alert.setHeaderText("You are Succseed to Register");
+			alert.setTitle("Register Sucssed");
+			alert.showAndWait();
+			movePage("LoginScreen"); //moving back to login
+		} else {
+			Alert alert = new Alert(AlertType.ERROR,"Please check if this account is not already registered");
+			alert.setHeaderText("You Failed to Register");
+			alert.setTitle("Register Failed");
+			alert.showAndWait();
+		}
 	}
 	
 	//moving pages

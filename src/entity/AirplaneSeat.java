@@ -84,8 +84,7 @@ public class AirplaneSeat {
 
 	@Override
 	public String toString() {
-		return "AirplaneSeat [row=" + row + ", seat=" + seat + ", seatClass=" + seatClass + ", airplane=" + airplane
-				+ "]";
+		return "row=" + row + ", seat=" + seat + ", seatClass=" + seatClass + ", airplane=" + airplane;
 	}
 	
 	

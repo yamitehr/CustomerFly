@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="orderDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FinishOrderScreen">
+<AnchorPane fx:id="orderDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FinishOrderScreen">
    <children>
       <Text fill="#4dc6ff" layoutX="170.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details:">
          <font>
@@ -21,12 +21,12 @@
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="26.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport number :" wrappingWidth="185.99276733398438">
+      <Text layoutX="33.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add passports of who is travelling:" wrappingWidth="349.99278259277344">
          <font>
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="passportNum" layoutX="33.0" layoutY="136.0" />
+      <TextField fx:id="passportNum" layoutX="33.0" layoutY="174.0" />
       <Text layoutX="20.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight details :" underline="true" wrappingWidth="157.9927978515625">
          <font>
             <Font name="Arial Rounded MT Bold" size="19.0" />
@@ -82,14 +82,11 @@
       </Text>
       <ComboBox fx:id="payment" layoutX="119.0" layoutY="599.0" prefWidth="150.0" promptText="select" />
       <ListView fx:id="customersList" layoutX="449.0" layoutY="136.0" prefHeight="153.0" prefWidth="167.0" />
-      <Button layoutX="326.0" layoutY="225.0" mnemonicParsing="false" onAction="#addCustomerToList" text="Add To list &gt;&gt;">
+      <Button layoutX="263.0" layoutY="175.0" mnemonicParsing="false" onAction="#addCustomerToList" text="Add To list &gt;&gt;">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="passportNum1" layoutX="204.0" layoutY="136.0" />
-      <TextField fx:id="passportNum2" layoutX="33.0" layoutY="174.0" />
-      <TextField fx:id="passportNum3" layoutX="204.0" layoutY="174.0" />
       <ListView fx:id="productsInFlight" layoutX="280.0" layoutY="498.0" prefHeight="103.0" prefWidth="338.0" />
       <Text layoutX="21.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entertain products in flight:" underline="true" wrappingWidth="313.9927978515625">
          <font>

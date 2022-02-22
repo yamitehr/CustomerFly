@@ -19,11 +19,15 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 import util.Alerts;
 import util.MealType;
 import util.SeatClass;
@@ -203,5 +207,11 @@ public class CheckIn {
 		firstList.getSelectionModel().clearSelection();
 		
 		clearFields();
+	}
+	public void moveHomeScreen(ActionEvent event) throws Exception {
+		Parent newRoot = FXMLLoader.load(getClass().getResource("/boundry/HomeScreenAdmin.fxml"));
+		Stage primaryStage = (Stage) flights.getScene().getWindow();
+		primaryStage.getScene().setRoot(newRoot);
+		primaryStage.show();
 	}
 }

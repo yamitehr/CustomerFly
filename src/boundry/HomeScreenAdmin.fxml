@@ -5,19 +5,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="homeAdmin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.HomeScreenAdmin">
+<AnchorPane fx:id="homeAdmin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.HomeScreenAdmin">
    <children>
-      <Button layoutX="269.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#ordersMove" prefHeight="85.0" prefWidth="98.0" text="Orders">
+      <Button layoutX="166.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#ordersMove" prefHeight="43.0" prefWidth="254.0" text="Orders">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="475.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#suppliersMove" prefHeight="85.0" prefWidth="98.0" text="Suppliers">
+      <Button layoutX="166.0" layoutY="343.0" mnemonicParsing="false" onMouseClicked="#suppliersMove" prefHeight="43.0" prefWidth="254.0" text="Suppliers">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="433.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#productsMove" prefHeight="85.0" prefWidth="98.0" text="Entertain Products" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="166.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#productsMove" prefHeight="43.0" prefWidth="254.0" text="Entertain Products" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
@@ -32,19 +32,24 @@
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="97.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#productInFlightMove" prefHeight="85.0" prefWidth="98.0" text="Products In Flight &amp; Feedback" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="168.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#productInFlightMove" prefHeight="43.0" prefWidth="254.0" text="Products In Flight &amp; Feedback" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="55.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#handleFlightsUpdatesMove" prefHeight="85.0" prefWidth="98.0" text="Handle Flights updates" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="166.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#handleFlightsUpdatesMove" prefHeight="43.0" prefWidth="254.0" text="Handle Flights updates" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="269.0" layoutY="483.0" mnemonicParsing="false" onMouseClicked="#productsInFlightReportMove" prefHeight="85.0" prefWidth="98.0" text="Products In Flight Report" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="168.0" layoutY="401.0" mnemonicParsing="false" onMouseClicked="#productsInFlightReportMove" prefHeight="43.0" prefWidth="254.0" text="Products In Flight Report" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="168.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#checkInMove" prefHeight="43.0" prefWidth="254.0" text="Chek-In" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Button>
    </children>

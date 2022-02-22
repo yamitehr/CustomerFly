@@ -1,5 +1,6 @@
 package boundry;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -63,5 +64,10 @@ public class HomeScreenAdmin {
 			movePage("ProductsInFlightReport");
 		}
 		
+		@FXML
+		public void checkInMove(MouseEvent event) throws Exception
+		{
+			movePage("CheckIn2");
+		}
 		
 }

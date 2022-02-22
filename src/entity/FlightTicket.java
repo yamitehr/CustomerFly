@@ -118,7 +118,13 @@ public class FlightTicket {
 	}
 	@Override
 	public String toString() {
-		return "Ticket number " + ticketID + ", of OrderID " + order.getOrderID() + ", Class " + seatClass + ", customer passport " + customer.getPassportID() + ", flight number" + flight.getFlightID() + ", seat " + seat.getRow() + seat.getSeat();
+		String toReturn;
+		if(seat.getRow() == 0) {
+			toReturn = "Ticket number " + ticketID + ", of OrderID " + order.getOrderID() + ", Class " + seatClass + ", customer passport " + customer.getPassportID() + ", flight number " + flight.getFlightID();
+		} else {
+			toReturn = "Ticket number " + ticketID + ", of OrderID " + order.getOrderID() + ", Class " + seatClass + ", customer passport " + customer.getPassportID() + ", flight number " + flight.getFlightID() + ", seat " + seat.getRow() + seat.getSeat();
+		}
+		return toReturn;
 	}
 	public boolean isCanceled() {
 		return isCanceled;

@@ -91,6 +91,9 @@ public class FinishOrderScreen {
 	@FXML
     private Text totalPriceText;
 	
+	@FXML
+	private ArrayList<FlightTicket> allTickets;
+	
 	 double priceTicket = CustomersControl.getInstance().calcPrice(BuyFlightTicket.chooseFlight, BuyFlightTicket.mealT, BuyFlightTicket.type);
 	 double pricePremiumTicket = CustomersControl.getInstance().calcPricePremium(BuyFlightTicket.chooseFlight, BuyFlightTicket.mealT, BuyFlightTicket.type, BuyPrimumeTicketFlight.weightSuitcase);
 	
@@ -186,27 +189,16 @@ public class FinishOrderScreen {
 	 }
 	 
 	 public void addCustomerToList(ActionEvent event) throws Exception {
-		 customersList.getItems().clear();
+	//	 customersList.getItems().clear();
 		 for(Customer c : CustomersControl.getInstance().getCustomers()) {
 				 if(!passportNum.getText().equals("") && passportNum.getText().equals(c.getPassportID())) {
 					 customersList.getItems().add(passportNum.getText()+" "+c.getFirstName()+" "+c.getLastName());
 				 }
-				 if(!passportNum1.getText().equals("") && passportNum1.getText().equals(c.getPassportID())) {
-					 customersList.getItems().add(passportNum1.getText()+" "+c.getFirstName()+" "+c.getLastName());
-				 }
-				 if(!passportNum2.getText().equals("") && passportNum2.getText().equals(c.getPassportID())) {
-					 customersList.getItems().add(passportNum2.getText()+" "+c.getFirstName()+" "+c.getLastName());
-				 }
-				 if(!passportNum3.getText().equals("") && passportNum3.getText().equals(c.getPassportID())) {
-					 customersList.getItems().add(passportNum3.getText()+" "+c.getFirstName()+" "+c.getLastName());
-				 }
 			 }
-			 
+		 passportNum.clear();
 			
-			 
 		 }
-		 
-}
+	}
 
 	 
 	 
