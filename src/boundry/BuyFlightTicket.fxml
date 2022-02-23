@@ -7,13 +7,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="buyTicket" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.BuyFlightTicket">
+<AnchorPane fx:id="buyTicket" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.BuyFlightTicket">
    <children>
       <Text fill="#53bdff" layoutX="190.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight Ticket:">
          <font>
@@ -32,26 +29,10 @@
       </Text>
       <DatePicker fx:id="from" layoutX="89.0" layoutY="126.0" />
       <DatePicker fx:id="until" layoutX="352.0" layoutY="126.0" />
-      <Button layoutX="500.0" layoutY="292.0" mnemonicParsing="false" onAction="#findFlightsBtn" text="Show flights">
+      <Button layoutX="500.0" layoutY="292.0" mnemonicParsing="false" onAction="#findFlightsBtn" text="Show flights" textFill="#53bdff">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
-         <textFill>
-            <RadialGradient centerX="0.5111524163568774" centerY="0.5190476190476191" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.13920000195503235" green="0.6334100961685181" blue="0.8700000047683716" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.6749512553215027" green="0.7608430981636047" blue="0.7894737124443054" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
       </Button>
       <ListView fx:id="flightsList" layoutX="26.0" layoutY="343.0" onMouseClicked="#flightChoose" prefHeight="200.0" prefWidth="579.0" />
       <Text layoutX="26.0" layoutY="612.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meal type:" wrappingWidth="110.65946197509766">
@@ -59,26 +40,10 @@
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="539.0" layoutY="549.0" mnemonicParsing="false" onAction="#chooseBtn" text="Choose">
+      <Button layoutX="539.0" layoutY="549.0" mnemonicParsing="false" onAction="#chooseBtn" text="Choose" textFill="#54beff">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.4936507815406436" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.2666666805744171" green="0.7764706015586853" blue="0.8784313797950745" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.6749512553215027" green="0.7608430981636047" blue="0.7894737124443054" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
       </Button>
       <ComboBox fx:id="mealType" layoutX="131.0" layoutY="593.0" prefWidth="150.0" promptText="select " />
       <Text layoutX="26.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class type:" wrappingWidth="110.65946197509766">
@@ -87,26 +52,10 @@
          </font>
       </Text>
       <ComboBox fx:id="classType" layoutX="131.0" layoutY="205.0" prefWidth="150.0" promptText="select " />
-      <Button layoutX="564.0" layoutY="647.0" mnemonicParsing="false" onAction="#moveTicketPremium" prefHeight="25.0" prefWidth="56.0" text="Next">
+      <Button layoutX="564.0" layoutY="647.0" mnemonicParsing="false" onAction="#moveTicketPremium" prefHeight="25.0" prefWidth="56.0" text="Next" textFill="#54beff">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />
-         </font>
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.4936507815406436" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.2666666805744171" green="0.7764706015586853" blue="0.8784313797950745" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.6749512553215027" green="0.7608430981636047" blue="0.7894737124443054" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill></Button>
+         </font></Button>
       <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#backToHomeScreen" prefHeight="25.0" prefWidth="56.0" text="Back">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="homeCustomer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.HomeScreenCustomer">
+<AnchorPane fx:id="homeCustomer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.HomeScreenCustomer">
    <children>
       <Text layoutX="95.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Customer-Fly!" textAlignment="CENTER" wrappingWidth="439.4700012207031">
          <font>
@@ -31,12 +31,7 @@
             </RadialGradient>
          </fill>
       </Text>
-      <Button layoutX="218.0" layoutY="343.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="193.0" text="My Orders">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
-         </font>
-      </Button>
-      <Button layoutX="218.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#newOrderAndFlightTicket" prefHeight="79.0" prefWidth="193.0" text="New Order">
+      <Button layoutX="218.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#newOrderAndFlightTicket" prefHeight="79.0" prefWidth="193.0" text="New Order">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
@@ -46,7 +41,7 @@
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="218.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#personalInfoMove" prefHeight="79.0" prefWidth="193.0" text="Personal Information" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="218.0" layoutY="404.0" mnemonicParsing="false" onMouseClicked="#personalInfoMove" prefHeight="79.0" prefWidth="193.0" text="Personal Information" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
