@@ -56,8 +56,8 @@ public class EntertainProduct {
 
 	@Override
 	public String toString() {
-		return "EntertainProduct [ProductID=" + ProductID + ", Name=" + Name + ", Description=" + Description
-				+ ", Type=" + Type + "]";
+		return "ProductID=" + ProductID + ", Name=" + Name + ", Description=" + Description
+				+ ", Type=" + Type;
 	}
 
 }

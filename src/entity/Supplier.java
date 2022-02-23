@@ -59,8 +59,8 @@ public class Supplier {
 
 	@Override
 	public String toString() {
-		return "Supplier [SupplierID=" + SupplierID + ", Name=" + Name + ", PhoneNumber=" + PhoneNumber + ", Email="
-				+ Email + ", Fax=" + Fax + "]";
+		return "SupplierID=" + SupplierID + ", Name=" + Name + ", PhoneNumber=" + PhoneNumber + ", Email="
+				+ Email + ", Fax=" + Fax;
 	}
 
 }

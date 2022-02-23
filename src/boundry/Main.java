@@ -24,6 +24,7 @@ public class Main extends Application{
 			stg  = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("/boundry/LoginScreen.fxml"));
 			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());	
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Customer-Fly");
 			primaryStage.setResizable(false);

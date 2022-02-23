@@ -49,8 +49,8 @@ public class ProductOfSupplierInFlight {
 
 	@Override
 	public String toString() {
-		return "ProductOfSupplierInFlight [flightId=" + flightId + ", supplierID=" + supplierID + ", productId="
-				+ productId + ", feedback=" + feedback + "]";
+		return "flightId=" + flightId + ", supplierID=" + supplierID + ", productId="
+				+ productId + ", feedback=" + feedback;
 	}
 	
 	
